@@ -24,6 +24,7 @@ Feature List:
   <li>Allows you to mark complete for task finished for clients  </li>
   <li>Allows you to view list of all clients and dates you followed up with them</li>
   <li>Allows you to input client, date followed up, and task for client</li>
+  <li>Allows you to update and delete clients</li>
 </ul>
 
 Interesting Queries:
@@ -31,5 +32,5 @@ Interesting Queries:
 <ul>
   <li>View total days spent with client</li>
   <li> View a total list of clients that need follow up</li>
-  <li> View a total list of task "over all" not completed 
+  <li> View a total list of task "over all" not completed
 </ul>
