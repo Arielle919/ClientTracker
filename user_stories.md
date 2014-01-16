@@ -16,6 +16,9 @@ User Stories "Client Tracker"
     <ul>
         <li>A list of clients and client task along with follow-up dates are printed 
         categorized by the correct client</li>
+        <li>A snippet of task will show for each client when viewing entire client list</li>
+        <li>Only most recent follow-up date will show when viewing entire client list</li>
+        <li> List of task, and follow-up dates will show its entirety once user does client indiviual lookup</li>
     </ul>
 </h6>
 
@@ -34,6 +37,7 @@ User Stories "Client Tracker"
 <h6>Acceptance Criteria:<br>
     <ul>
         <li>A list of Clients and task will print out</li>
+        <li>Only a snippet of Task will show when entire list of Client and task are printed out</li>
         <li>The Correct task status will be categorized under the correct client</li>
         <li>If task is "processing" it's status will be "uncompleted"</li>
         <li>If task is "completed" it's status will be "completed"</li>
