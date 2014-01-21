@@ -79,10 +79,8 @@ User Stories "Client Tracker"
         <li>A way for user to input their own data (client, follow-up date, and task for each client)</li>
         <li>Once data is inputed this data will be added to the The Client List</li>
         <li>Each client has their own ID number so the user can look up Clients indiviually</li>
-
     </ul>
 </h6>
-
 <h5>
     As a Sales Associate<br>
     I want to be able to update or delete my clients when necessary<br>
