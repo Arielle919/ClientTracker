@@ -2,7 +2,7 @@ require_relative 'helper'
 
 class TestEnteringClients < MiniTest::Unit::TestCase
   def test_valid_client_gets_printed
-    command = "./clienttracker add Sam Adams --date 01/25/2014 --task Sign Contract"
+    command = "./clienttracker add Sam Adams --date 01/25/2014 --task Sign,Contract"
     expected = "Theoretically creating: a Client named Sam Adams, appointment date: 01/25/2014 and Client Task: Sign Contract"
     assert_command_output expected, command
   end
