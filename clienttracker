@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+
+command = ARGV[0]
+firstname = ARGV[1]
+lastname = ARGV[2]
+options = {}
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: clienttracker [command] [options]"
+
+  opts.on("--date [DATE]", "The date") do |date|
+    options[:date] = date
+  end
+
+  opts.on("--task x,y,z", Array, "The task") do |task|
+    options[:task] = task.join(" ")
+  end
+end.parse!
+
+
+if firstname.nil? || firstname.empty? || lastname.nil? || lastname.empty?
+  puts "You must provide Client's first and lastname in order to add appointment and task."
+  exit
+end
+
+missing_things = []
+missing_things << "the date" unless options[:date]
+missing_things << "task" unless options[:task]
+unless missing_things.empty?
+  puts "You must provide #{missing_things.join(" and ")} for Client."
+  exit
+end
+
+puts "Theoretically creating: a Client named #{firstname} #{lastname}, appointment date: #{options[:date]} and Client Task: #{options[:task]}"
