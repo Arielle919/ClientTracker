@@ -19,7 +19,7 @@ else
     require "sqlite3"
     database = Environment.database_connection(options[:environment])
     # This is ripe for a SQL injection attack:
-    statement = "insert into Clients(Firstname, Lastname, Appointment, Task) values('#{options[:firstname]}', '#{options[:lastname]}', #{options[:date]}, '#{options[:task]}')"
+    statement = "insert into Clients(Firstname, Lastname, Appointment, Task) values('#{options[:firstname]}', '#{options[:lastname]}', '#{options[:date]}', '#{options[:task]}')"
     database.execute(statement)
     puts "Theoretically creating: a Client named #{options[:firstname]} #{options[:lastname]}, appointment date: #{options[:date]} and Client Task: #{options[:task]}"
   else
