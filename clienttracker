@@ -1,36 +1,60 @@
 #!/usr/bin/env ruby
 
 require_relative 'lib/environment'
-require_relative 'lib/parse_arguments'
+require_relative 'lib/argument_parser'
+require_relative 'lib/interactions'
 
-command = ARGV[0]
-options = ParseArguments.parse
-options[:firstname] = ARGV[1]
-options[:lastname] = ARGV[2]
+# Router:
+class ClientTracker
+  include Interactions
+  attr_reader :options
 
-if command == "search"
-  puts "What do you want to search for?"
-  input = $stdin.gets
-  puts "You asked for: #{input}"
-  # searching!
-else
-  error_messages = ParseArguments.validate(options)
-  if error_messages.empty?
-    require "sqlite3"
-    database = Environment.database_connection(options[:environment])
-    # This is ripe for a SQL injection attack:
-    statement = "insert into Clients(Firstname, Lastname, Appointment, Task) values('#{options[:firstname]}', '#{options[:lastname]}', '#{options[:date]}', '#{options[:task]}')"
-    database.execute(statement)
-    puts "Theoretically creating: a Client named #{options[:firstname]} #{options[:lastname]}, appointment date: #{options[:date]} and Client Task: #{options[:task]}"
-  else
-    puts error_messages
+  def initialize
+    @options = ArgumentParser.parse
+    Environment.environment = @options[:environment] || "production"
   end
+
+  def main
+    database = Environment.database_connection
+
+    if options[:command] == "search"
+      search_term = ask("What do you want to search for?")
+      search_clients_for(search_term)
+    elsif options[:command] == "add"
+      error_messages = ArgumentParser.validate(options)
+      if error_messages.empty?
+        client = Client.new(options)
+        client.save
+        puts "A client named #{client.name}, #{client.appointment}, #{client.task} was created."
+      else
+        puts error_messages
+      end
+    elsif options[:command] == "list"
+      list_clients()
+    elsif options[:command] == "edit"
+      if client = Client.find(options[:id])
+        client.update(options)
+        puts "Client #{client.id} is now named #{client.name}, #{client.appointment}, #{client.task}."
+      else
+        puts "Client #{options[:id]} couldn't be found."
+      end
+    else
+      puts "Command not implemented"
+    end
+  end
+
+  def list_clients()
+    puts "All Clients:"
+    puts Client.all
+  end
+
+  def search_clients_for(search_term)
+    puts "You asked for: #{search_term}"
+    puts Client.search(search_term)
+  end
+
 end
 
 
-
-
-
-
-
-
+clienttracker = ClientTracker.new()
+clienttracker.main()

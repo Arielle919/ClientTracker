@@ -1,19 +1,18 @@
 require_relative 'helper'
-require 'sqlite3'
 
 class TestSearchingClients < ClientTest
   def test_search_returns_relevant_results
-    `./clienttracker add Sam Adams --date 01/20/2014 --task "sign contract" --environment test`
-    `./clienttracker add Tim Doe --date 01/25/2014 --task "sign docs" --environment test`
-    `./clienttracker add Tim Jones --date 01/26/2014 --task "sign documents" --environment test`
+    `./clienttracker add 'Sam Adams' --appointment 01/20/2014 --task 'Sign Docs' --environment test`
+    `./clienttracker add 'Sam Jenkins' --appointment 01/21/2014 --task 'Sign Papers' --environment test`
+    `./clienttracker add 'Tim Web' --appointment 01/22/2014 --task 'Sign Contract' --environment test`
 
     shell_output = ""
-    IO.popen('./clienttracker search', 'r+') do |pipe|
-      pipe.puts("Tim")
+    IO.popen('./clienttracker search --environment test', 'r+') do |pipe|
+      pipe.puts("Sam")
       pipe.close_write
       shell_output = pipe.read
     end
-    assert_in_output shell_output, "Tim Doe", "Tim Jones"
-    assert_not_in_output shell_output, "Sam Adams"
+    assert_in_output shell_output, "Sam Adams", "Sam Jenkins"
+    assert_not_in_output shell_output, "Tim Web"
   end
 end

@@ -1,0 +1,9 @@
+# Logfile created on 2014-01-25 17:40:57 -0600 by logger.rb/41954
+I, [2014-01-25T17:40:57.326761 #41606]  INFO -- : Executing: CREATE TABLE Clients (id INTEGER PRIMARY KEY AUTOINCREMENT, Firstname varchar(10), Lastname varchar(10), Appointment varchar(10), Task varchar(100))
+I, [2014-01-28T13:53:19.158753 #52673]  INFO -- : Executing: insert into Clients(Firstname, Lastname, Appointment, Task) values('Sam', 'Adams', '01/20/2014', 'sign contract')
+I, [2014-01-28T13:53:57.699161 #52696]  INFO -- : Executing: insert into Clients(Firstname, Lastname, Appointment, Task) values('Sam', 'Jenkins', '02/21/2014', 'sign docs')
+I, [2014-01-28T13:54:36.570314 #52718]  INFO -- : Executing: insert into Clients(Firstname, Lastname, Appointment, Task) values('Tim', 'Codes', '03/24/2014', 'sign papers')
+I, [2014-01-28T13:56:44.081152 #52748]  INFO -- : Executing: insert into Clients(Firstname, Lastname, Appointment, Task) values('Tim', 'Codes', '03/24/2014', 'sign papers')
+I, [2014-01-28T22:27:40.273220 #56322]  INFO -- : Executing: CREATE TABLE clients (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50), appointment varchar(10), task varchar(100))
+I, [2014-01-28T23:25:51.780626 #58731]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Codes', 03/24/2014, sign papers)
+I, [2014-01-28T23:27:22.571249 #58766]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Codes', 03/24/2014, sign papers)

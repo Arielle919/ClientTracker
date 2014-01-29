@@ -2,12 +2,16 @@ require 'minitest/autorun'
 require_relative '../lib/environment'
 
 class ClientTest < MiniTest::Unit::TestCase
+  def setup
+    Environment.environment = "test"
+  end
+
   def database
-    Environment.database_connection("test")
+    Environment.database_connection
   end
 
   def teardown
-    database.execute("delete from Clients")
+    database.execute("delete from clients")
   end
 
   def assert_command_output expected, command
