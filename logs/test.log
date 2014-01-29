@@ -8144,3 +8144,192 @@ I, [2014-01-29T10:30:19.391754 #6115]  INFO -- : Executing: insert into clients(
 I, [2014-01-29T10:30:19.440598 #6118]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Web', '01/22/2014', 'Sign Contract')
 I, [2014-01-29T10:30:19.487962 #6120]  INFO -- : Executing: select clients.* from clients where name LIKE '%Sam%' order by name ASC
 I, [2014-01-29T10:30:19.490438 #6076]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.762929 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Foo', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:02.765310 #6272]  INFO -- : Executing: update clients set name = 'Bar', appointment = '01/20/2014', task = 'Sign Docs' where id = 760
+I, [2014-01-29T10:36:02.767030 #6272]  INFO -- : Executing: select * from clients where id = 760
+I, [2014-01-29T10:36:02.767311 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.769399 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:02.770790 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.774274 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:02.778226 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Anna Adams', '01/21/2014', 'Sign Papers')
+I, [2014-01-29T10:36:02.781979 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Ross', '01/22/2014', 'Sign Contract')
+I, [2014-01-29T10:36:02.784903 #6272]  INFO -- : Executing: select clients.* from clients where name LIKE '%%' order by name ASC
+I, [2014-01-29T10:36:02.785283 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.786819 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:02.789057 #6272]  INFO -- : Executing: select * from clients where id = 765
+I, [2014-01-29T10:36:02.789353 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.791323 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.793816 #6272]  INFO -- : Executing: select clients.* from clients where name LIKE '%%' order by name ASC
+I, [2014-01-29T10:36:02.794091 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.798050 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('foo', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:02.800518 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Adams', '01/21/2014', 'Sign Papers')
+I, [2014-01-29T10:36:02.802756 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Ross', '01/22/2014', 'Sign Contract')
+I, [2014-01-29T10:36:02.805321 #6272]  INFO -- : Executing: select clients.* from clients where name LIKE '%Sam%' order by name ASC
+I, [2014-01-29T10:36:02.805599 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.807032 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('foo', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:02.809189 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Adams', '01/20/2014', 'Sign Papers')
+I, [2014-01-29T10:36:02.811577 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Ross', '01/20/2014', 'Sign Papers')
+I, [2014-01-29T10:36:02.814430 #6272]  INFO -- : Executing: select clients.* from clients where name LIKE '%Tim%' order by name ASC
+I, [2014-01-29T10:36:02.814972 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.818604 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:02.821637 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.824726 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'sign docs')
+I, [2014-01-29T10:36:02.827146 #6272]  INFO -- : Executing: select count(id) from clients
+I, [2014-01-29T10:36:02.827482 #6272]  INFO -- : Executing: update clients set name = 'Kim Harris', appointment = '01/20/2014', task = 'sign docs' where id = 773
+I, [2014-01-29T10:36:02.829944 #6272]  INFO -- : Executing: select count(id) from clients
+I, [2014-01-29T10:36:02.830341 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.834128 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Foo', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:02.836071 #6272]  INFO -- : Executing: select * from clients where id = 774
+I, [2014-01-29T10:36:02.836402 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.838326 #6272]  INFO -- : Executing: select * from clients where id = 12342
+I, [2014-01-29T10:36:02.838580 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.840047 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('foo', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:02.842030 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Adams', '01/21/2014', 'Sign Papers')
+I, [2014-01-29T10:36:02.844367 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Ross', '01/22/2014', 'Sign Contract')
+I, [2014-01-29T10:36:02.845918 #6272]  INFO -- : Executing: select clients.* from clients where name LIKE '%Tim%' order by name ASC
+I, [2014-01-29T10:36:02.846202 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.847641 #6272]  INFO -- : Executing: select count(id) from clients
+I, [2014-01-29T10:36:02.847807 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Foo', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:02.860352 #6272]  INFO -- : Executing: select count(id) from clients
+I, [2014-01-29T10:36:02.860588 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.862740 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Foo', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:02.868014 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.870370 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:02.872313 #6272]  INFO -- : Executing: update clients set name = 'Jim Jones', appointment = '01/20/2014', task = 'Sign Papers' where id = 780
+I, [2014-01-29T10:36:02.874302 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.876466 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:02.877898 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Adams', '01/22/2014', 'Sign Papers')
+I, [2014-01-29T10:36:02.879739 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.882477 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:02.962224 #6277]  INFO -- : Executing: select * from clients where id = 783
+I, [2014-01-29T10:36:02.962862 #6277]  INFO -- : Executing: update clients set name = 'Sam Adams', appointment = '01/20/2014', task = 'Sign Docs' where id = 783
+I, [2014-01-29T10:36:02.967949 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:02.970967 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Contract')
+I, [2014-01-29T10:36:03.042822 #6280]  INFO -- : Executing: select * from clients where id = 784
+I, [2014-01-29T10:36:03.043264 #6280]  INFO -- : Executing: update clients set name = 'Sam Adams', appointment = '01/20/2014', task = 'Sign Contract' where id = 784
+I, [2014-01-29T10:36:03.053198 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:03.057423 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Contract')
+I, [2014-01-29T10:36:03.126587 #6283]  INFO -- : Executing: select * from clients where id = 785
+I, [2014-01-29T10:36:03.127209 #6283]  INFO -- : Executing: update clients set name = 'Sam Adams', appointment = '01/20/2014', task = 'Sign Papers' where id = 785
+I, [2014-01-29T10:36:03.132538 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:03.134627 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:03.208641 #6286]  INFO -- : Executing: select * from clients where id = 786
+I, [2014-01-29T10:36:03.209250 #6286]  INFO -- : Executing: update clients set name = 'Sam Adams', appointment = 'January/20/2014', task = 'Sign Docs' where id = 786
+I, [2014-01-29T10:36:03.223379 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:03.290339 #6292]  INFO -- : Executing: select * from clients where id = 218903123980123
+I, [2014-01-29T10:36:03.293565 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:03.364152 #6272]  INFO -- : Executing: select count(id) from clients
+I, [2014-01-29T10:36:03.364705 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:03.434768 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:03.524920 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:03.600297 #6303]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:03.613230 #6272]  INFO -- : Executing: select name, appointment, task from clients
+I, [2014-01-29T10:36:03.613589 #6272]  INFO -- : Executing: select count(id) from clients
+I, [2014-01-29T10:36:03.613737 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:03.694324 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:03.761326 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:03.848343 #6312]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:03.861509 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:03.864511 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:03.866114 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Jones', '01/27/2014', 'Sign Paper')
+I, [2014-01-29T10:36:03.869349 #6272]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Collins', '01/25/2014', 'Sign Contract')
+I, [2014-01-29T10:36:03.947117 #6314]  INFO -- : Executing: select clients.* from clients where name LIKE '%%' order by name ASC
+I, [2014-01-29T10:36:03.950653 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:36:04.032700 #6317]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:36:04.108831 #6320]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Jenkins', '01/21/2014', 'Sign Papers')
+I, [2014-01-29T10:36:04.162760 #6323]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Web', '01/22/2014', 'Sign Contract')
+I, [2014-01-29T10:36:04.216739 #6325]  INFO -- : Executing: select clients.* from clients where name LIKE '%Sam%' order by name ASC
+I, [2014-01-29T10:36:04.220189 #6272]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.721672 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Foo', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:08.723914 #6387]  INFO -- : Executing: update clients set name = 'Bar', appointment = '01/20/2014', task = 'Sign Docs' where id = 795
+I, [2014-01-29T10:39:08.725424 #6387]  INFO -- : Executing: select * from clients where id = 795
+I, [2014-01-29T10:39:08.725707 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.727128 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('foo', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:08.729150 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Adams', '01/20/2014', 'Sign Papers')
+I, [2014-01-29T10:39:08.732256 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Ross', '01/20/2014', 'Sign Papers')
+I, [2014-01-29T10:39:08.738241 #6387]  INFO -- : Executing: select clients.* from clients where name LIKE '%Tim%' order by name ASC
+I, [2014-01-29T10:39:08.738881 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.742029 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Foo', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:08.744480 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.746274 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.750733 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('foo', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:08.758625 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Adams', '01/21/2014', 'Sign Papers')
+I, [2014-01-29T10:39:08.760970 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Ross', '01/22/2014', 'Sign Contract')
+I, [2014-01-29T10:39:08.763044 #6387]  INFO -- : Executing: select clients.* from clients where name LIKE '%Tim%' order by name ASC
+I, [2014-01-29T10:39:08.763357 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.765295 #6387]  INFO -- : Executing: select count(id) from clients
+I, [2014-01-29T10:39:08.765492 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Foo', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:08.767018 #6387]  INFO -- : Executing: select count(id) from clients
+I, [2014-01-29T10:39:08.767209 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.769795 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:08.773756 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Anna Adams', '01/21/2014', 'Sign Papers')
+I, [2014-01-29T10:39:08.777044 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Ross', '01/22/2014', 'Sign Contract')
+I, [2014-01-29T10:39:08.779427 #6387]  INFO -- : Executing: select clients.* from clients where name LIKE '%%' order by name ASC
+I, [2014-01-29T10:39:08.780189 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.782865 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Foo', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:08.785567 #6387]  INFO -- : Executing: select * from clients where id = 807
+I, [2014-01-29T10:39:08.785930 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.787778 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:08.790284 #6387]  INFO -- : Executing: select * from clients where id = 808
+I, [2014-01-29T10:39:08.790600 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.794209 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:08.797175 #6387]  INFO -- : Executing: update clients set name = 'Jim Jones', appointment = '01/20/2014', task = 'Sign Papers' where id = 809
+I, [2014-01-29T10:39:08.799099 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.801703 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:08.804820 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Adams', '01/22/2014', 'Sign Papers')
+I, [2014-01-29T10:39:08.807757 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.810358 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'sign docs')
+I, [2014-01-29T10:39:08.813324 #6387]  INFO -- : Executing: select count(id) from clients
+I, [2014-01-29T10:39:08.813723 #6387]  INFO -- : Executing: update clients set name = 'Kim Harris', appointment = '01/20/2014', task = 'sign docs' where id = 812
+I, [2014-01-29T10:39:08.818208 #6387]  INFO -- : Executing: select count(id) from clients
+I, [2014-01-29T10:39:08.818632 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.821063 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('foo', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:08.824972 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Adams', '01/21/2014', 'Sign Papers')
+I, [2014-01-29T10:39:08.826892 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Ross', '01/22/2014', 'Sign Contract')
+I, [2014-01-29T10:39:08.829945 #6387]  INFO -- : Executing: select clients.* from clients where name LIKE '%Sam%' order by name ASC
+I, [2014-01-29T10:39:08.830345 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.841989 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:08.845442 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.850573 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:08.853072 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.855131 #6387]  INFO -- : Executing: select * from clients where id = 12342
+I, [2014-01-29T10:39:08.855540 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.858023 #6387]  INFO -- : Executing: select clients.* from clients where name LIKE '%%' order by name ASC
+I, [2014-01-29T10:39:08.858286 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.860953 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Contract')
+I, [2014-01-29T10:39:08.945196 #6392]  INFO -- : Executing: select * from clients where id = 818
+I, [2014-01-29T10:39:08.946171 #6392]  INFO -- : Executing: update clients set name = 'Sam Adams', appointment = '01/20/2014', task = 'Sign Papers' where id = 818
+I, [2014-01-29T10:39:08.953785 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:08.956194 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:09.025337 #6395]  INFO -- : Executing: select * from clients where id = 819
+I, [2014-01-29T10:39:09.025813 #6395]  INFO -- : Executing: update clients set name = 'Sam Adams', appointment = '01/20/2014', task = 'Sign Docs' where id = 819
+I, [2014-01-29T10:39:09.030457 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:09.033124 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:09.109316 #6398]  INFO -- : Executing: select * from clients where id = 218903123980123
+I, [2014-01-29T10:39:09.112177 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:09.121555 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Contract')
+I, [2014-01-29T10:39:09.205787 #6401]  INFO -- : Executing: select * from clients where id = 820
+I, [2014-01-29T10:39:09.206311 #6401]  INFO -- : Executing: update clients set name = 'Sam Adams', appointment = '01/20/2014', task = 'Sign Contract' where id = 820
+I, [2014-01-29T10:39:09.221018 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:09.306560 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:09.395529 #6387]  INFO -- : Executing: select count(id) from clients
+I, [2014-01-29T10:39:09.396009 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:09.450772 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:09.525268 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:09.602176 #6415]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:09.608048 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:09.688505 #6418]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:09.702652 #6387]  INFO -- : Executing: select name, appointment, task from clients
+I, [2014-01-29T10:39:09.703216 #6387]  INFO -- : Executing: select count(id) from clients
+I, [2014-01-29T10:39:09.703473 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:09.782741 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:09.787564 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:09.791799 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Jones', '01/27/2014', 'Sign Paper')
+I, [2014-01-29T10:39:09.793968 #6387]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Collins', '01/25/2014', 'Sign Contract')
+I, [2014-01-29T10:39:09.865749 #6423]  INFO -- : Executing: select clients.* from clients where name LIKE '%%' order by name ASC
+I, [2014-01-29T10:39:09.870302 #6387]  INFO -- : Executing: delete from clients
+I, [2014-01-29T10:39:09.924441 #6426]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/20/2014', 'Sign Docs')
+I, [2014-01-29T10:39:09.989751 #6429]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Jenkins', '01/21/2014', 'Sign Papers')
+I, [2014-01-29T10:39:10.045740 #6432]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tim Web', '01/22/2014', 'Sign Contract')
+I, [2014-01-29T10:39:10.099710 #6434]  INFO -- : Executing: select clients.* from clients where name LIKE '%Sam%' order by name ASC
+I, [2014-01-29T10:39:10.102219 #6387]  INFO -- : Executing: delete from clients

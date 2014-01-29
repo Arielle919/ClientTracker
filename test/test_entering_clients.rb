@@ -18,17 +18,6 @@ class TestEnteringClients < ClientTest
     assert_equal 1, result[0][0]
   end
 
-  # def test_valid_purchase_gets_saved
-  #   `./grocerytracker add Cheerios --calories 210 --price 1.50 --environment test`
-  #   database.results_as_hash = false
-  #   results = database.execute("select name, calories, price from purchases")
-  #   expected = ["Cheerios", 210, 1.50]
-  #   assert_equal expected, results[0]
-
-  #   result = database.execute("select count(id) from purchases")
-  #   assert_equal 1, result[0][0]
-  # end
-
   def test_invalid_client_doesnt_get_saved
     `./clienttracker add 'Sam Adams' --appointment 01/20/2014`
     result = database.execute("select count(id) from clients")
