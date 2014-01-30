@@ -12,6 +12,7 @@ class ClientTest < MiniTest::Unit::TestCase
 
   def teardown
     database.execute("delete from clients")
+    # database.execute("delete from appointments")
   end
 
   def assert_command_output expected, command

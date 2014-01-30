@@ -14,8 +14,15 @@ class ClientTracker
     Environment.environment = @options[:environment] || "production"
   end
 
+  # def alphabet
+  #   ['A','E','I','O','U','B','C','D','F','G','H','J','K','L','M','N','P','Q',
+  #   'R','S','T','V','W','X','Y','Z'].join(" ")
+  # end
+
   def main
     database = Environment.database_connection
+    # chars = ClientTracker.new
+    # char = chars.alphabet
 
     if options[:command] == "search"
       search_term = ask("What do you want to search for?")
@@ -35,6 +42,9 @@ class ClientTracker
       if client = Client.find(options[:id])
         client.update(options)
         puts "Client #{client.id} is now named #{client.name}, #{client.appointment}, #{client.task}."
+      # elsif client = Client.find(options[:id]) && "#{client.appointment}".include?(char) == true
+      # elsif client = Client.find(options[:id]) && "#{client.appointment}".include?(char) == true
+      # puts "Client #{id} can't be updated.  Date must be in this format: mm/dd/yyyy."
       else
         puts "Client #{options[:id]} couldn't be found."
       end

@@ -25,6 +25,15 @@ class ArgumentParser
       opts.on("--environment [ENV]", "The database environment") do |env|
         options[:environment] = env
       end
+
+      opts.on("--needAppointment [APP]", "Client need appointment") do |app|
+        options[:needAppointment] = app
+      end
+
+      opts.on("--taskCompleted [COM]", "Client Task Completed") do |com|
+        options[:taskCompleted] = com
+      end
+
     end.parse!
     options[:name] ||= ARGV[1]
     options[:command] = ARGV[0]
@@ -32,6 +41,7 @@ class ArgumentParser
   end
 
   def self.validate options
+
     errors = []
     if options[:name].nil? or options[:name].empty?
       errors << "You must provide the name for the client you are adding.\n"
