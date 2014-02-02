@@ -15267,3 +15267,6 @@ I, [2014-02-01T13:15:46.627832 #36786]  INFO -- : Executing: delete from clients
 I, [2014-02-01T13:15:46.629858 #36786]  INFO -- : Executing: delete from appointments
 I, [2014-02-01T19:00:21.806271 #38135]  INFO -- : Executing: CREATE TABLE clients (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50), appointment varchar(10), task varchar(100))
 I, [2014-02-01T19:00:21.812018 #38135]  INFO -- : Executing: CREATE TABLE appointments (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50), appointment varchar(10), task varchar(100), needAppointment varchar(10))
+I, [2014-02-01T19:55:38.231931 #39226]  INFO -- : Executing: CREATE TABLE clients (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50), appointment varchar(10), task varchar(100))
+I, [2014-02-01T19:55:38.236074 #39226]  INFO -- : Executing: CREATE TABLE appointments (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50), appointment varchar(10), task varchar(100), needAppointment varchar(10))
+I, [2014-02-01T19:55:38.238371 #39226]  INFO -- : Executing: CREATE TABLE tasks (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50), appointment varchar(10), task varchar(100), taskCompleted varchar(10))

@@ -1,6 +1,7 @@
 require_relative 'database'
 require_relative '../models/client'
 require_relative '../models/appointment'
+require_relative '../models/task'
 require 'logger'
 
 class Environment

@@ -26,8 +26,7 @@ class Client
 
       @id = database.last_insert_row_id
     end
-    # ^ fails silently!!
-    # ^ Also, susceptible to SQL injection!
+
   end
 
   def self.find id
@@ -54,20 +53,9 @@ class Client
     end
   end
 
-  # class << self
-  #   alias :all :search
-  # end
-  # ^ is an alternative to:
   def self.all
     search
   end
-
-  # def price
-  #   sprintf('%.2f', @price) if @price
-  # end
-  # def appointment=(appointment)
-  #   @appointment = appointment.to_i
-  # end
 
   def to_s
     "#{name}: #{appointment}, #{task}, id: #{id}"
@@ -84,14 +72,8 @@ class Client
   end
 
   def update_attributes(attributes)
-    # @price = attributes[:price]
-    # @calories = attributes[:calories]
-    # @name = attributes[:name]
-    # ^ Long way
-    # Short way:
     [:name, :appointment, :task].each do |attr|
       if attributes[attr]
-        # self.calories = attributes[:calorie]
         self.send("#{attr}=", attributes[attr])
       end
     end

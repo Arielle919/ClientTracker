@@ -33,8 +33,10 @@ class ClientTracker
       if error_messages.empty?
         client = Client.new(options)
         appointments = Appointment.new(options)
+        tasks = Task.new(options)
         appointments.save
         client.save
+        tasks.save
         puts "A client named #{client.name}, #{client.appointment}, #{client.task} was created."
       else
         puts error_messages
@@ -57,8 +59,10 @@ class ClientTracker
     elsif options[:command] == "edit"
       if client = Client.find(options[:id])
         appointments = Appointment.find(options[:id])
+        tasks = Task.find(options[:id])
         client.update(options)
         appointments.update(options)
+        tasks.update(options)
         puts "Client #{client.id} is now named #{client.name}, #{client.appointment}, #{client.task}."
       else
         puts "Client #{options[:id]} couldn't be found."

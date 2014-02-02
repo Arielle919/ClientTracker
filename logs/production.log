@@ -597,3 +597,9 @@ I, [2014-02-01T19:10:57.535104 #38586]  INFO -- : Executing: insert into clients
 I, [2014-02-01T19:11:10.624170 #38606]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Sam Cook', 'none', 'none', 'yes')
 I, [2014-02-01T19:11:10.626554 #38606]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Cook', 'none', 'none')
 I, [2014-02-01T19:11:37.629627 #38628]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.needAppointment FROM appointments WHERE appointments.needAppointment = 'yes'
+I, [2014-02-01T19:55:19.615357 #39207]  INFO -- : Executing: CREATE TABLE clients (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50), appointment varchar(10), task varchar(100))
+I, [2014-02-01T19:55:19.617601 #39207]  INFO -- : Executing: CREATE TABLE appointments (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50), appointment varchar(10), task varchar(100), needAppointment varchar(10))
+I, [2014-02-01T19:55:19.618797 #39207]  INFO -- : Executing: CREATE TABLE tasks (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50), appointment varchar(10), task varchar(100), taskCompleted varchar(10))
+I, [2014-02-01T19:56:01.513537 #39244]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Sam Cook', 'none', 'none', 'yes')
+I, [2014-02-01T19:56:01.517317 #39244]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Cook', 'none', 'none')
+I, [2014-02-01T19:56:01.520238 #39244]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Sam Cook', 'none', 'none', 'no')

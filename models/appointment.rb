@@ -23,7 +23,6 @@ class Appointment
       database.execute("update appointments set name = '#{name}', appointment = '#{appointment}', task = '#{task}', needAppointment = '#{needAppointment}' where id = #{id}")
     else
       database.execute("insert into appointments(name, appointment, task, needAppointment) values('#{name}', '#{appointment}', '#{task}', '#{needAppointment}')")
-      # database.execute("insert into appointments(clientID, name, appointment, needAppointment) values(@id, '#{name}', '#{appointment}', '#{needAppointment}')")
 
       @id = database.last_insert_row_id
     end
@@ -55,24 +54,12 @@ class Appointment
     end
   end
 
-  # class << self
-  #   alias :all :search
-  # end
-  # ^ is an alternative to:
   def self.all
     search
   end
 
-  # def price
-  #   sprintf('%.2f', @price) if @price
-  # end
-  # def appointment=(appointment)
-  #   @appointment = appointment.to_i
-  # end
-
   def to_s
     "Client Name: #{name}: Appointment Date: #{appointment}, Need Appointment: #{needAppointment}, id: #{id}"
-    # "Client Name: #{name}: Appointment Date: #{appointment} Task: #{task}, Need Appointment: #{needAppointment}, id: #{id}"
   end
 
   def ==(other)
@@ -86,14 +73,8 @@ class Appointment
   end
 
   def update_attributes(attributes)
-    # @price = attributes[:price]
-    # @calories = attributes[:calories]
-    # @name = attributes[:name]
-    # ^ Long way
-    # Short way:
     [:name, :appointment, :task, :needAppointment].each do |attr|
       if attributes[attr]
-        # self.calories = attributes[:calorie]
         self.send("#{attr}=", attributes[attr])
       end
     end
