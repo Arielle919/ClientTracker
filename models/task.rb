@@ -26,8 +26,6 @@ class Task
 
       @id = database.last_insert_row_id
     end
-    # ^ fails silently!!
-    # ^ Also, susceptible to SQL injection!
   end
 
   def self.find id
@@ -41,6 +39,21 @@ class Task
     else
       nil
     end
+  end
+
+  def self.search(search_term = nil)
+    database = Environment.database_connection
+    database.results_as_hash = true
+    results = database.execute("select tasks.* from tasks where name LIKE '%#{search_term}%' order by name ASC")
+    results.map do |row_hash|
+      tasks = Task.new(name: row_hash["name"], appointment: row_hash["appointment"], task: row_hash["task"])
+      tasks.send("id=", row_hash["id"])
+      tasks
+    end
+  end
+
+  def self.all
+    search
   end
 
   def to_s

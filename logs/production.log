@@ -634,3 +634,88 @@ I, [2014-02-01T20:43:14.719411 #39964]  INFO -- : Executing: DELETE FROM appoint
 I, [2014-02-01T20:43:14.723211 #39964]  INFO -- : Executing: DELETE FROM clients WHERE id = '3'
 I, [2014-02-01T20:43:51.648976 #39984]  INFO -- : Executing: SELECT * FROM clients
 I, [2014-02-01T20:45:02.515251 #40008]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.task, tasks.taskCompleted FROM tasks WHERE tasks.taskCompleted = 'no'
+I, [2014-02-01T21:45:46.329956 #40255]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Sam Cook' ORDER by name ASC
+I, [2014-02-01T21:49:33.617898 #40330]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Sam Cook' ORDER by name ASC
+I, [2014-02-01T21:50:24.760484 #40354]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-01T21:53:20.632878 #40408]  INFO -- : Executing: select * from clients where id = 2
+I, [2014-02-01T21:53:20.633978 #40408]  INFO -- : Executing: DELETE FROM tasks WHERE id = '2'
+I, [2014-02-01T21:53:20.636771 #40408]  INFO -- : Executing: DELETE FROM appointments WHERE id = '2'
+I, [2014-02-01T21:53:20.638160 #40408]  INFO -- : Executing: DELETE FROM clients WHERE id = '2'
+I, [2014-02-01T21:53:25.310470 #40426]  INFO -- : Executing: select * from clients where id = 2
+I, [2014-02-01T22:00:18.942810 #40547]  INFO -- : Executing: select * from clients where id = 2
+I, [2014-02-01T22:02:15.402681 #40574]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Samantha Passman', '02/10/2014', 'Create Outline', 'no')
+I, [2014-02-01T22:02:15.419252 #40574]  INFO -- : Executing: insert into clients(name, appointment, task) values('Samantha Passman', '02/10/2014', 'Create Outline')
+I, [2014-02-01T22:02:15.424647 #40574]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Samantha Passman', '02/10/2014', 'Create Outline', 'yes')
+I, [2014-02-01T22:05:09.948170 #40607]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Sam Adams', '02/12/2014', 'Need Paperwork', 'no')
+I, [2014-02-01T22:05:09.962073 #40607]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '02/12/2014', 'Need Paperwork')
+I, [2014-02-01T22:05:09.967488 #40607]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Sam Adams', '02/12/2014', 'Need Paperwork', 'yes')
+I, [2014-02-01T22:06:37.251087 #40629]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Kenny Lopes', '02/15/2014', 'Create folder', 'no')
+I, [2014-02-01T22:06:37.270969 #40629]  INFO -- : Executing: insert into clients(name, appointment, task) values('Kenny Lopes', '02/15/2014', 'Create folder')
+I, [2014-02-01T22:06:37.282897 #40629]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Kenny Lopes', '02/15/2014', 'Create folder', 'yes')
+I, [2014-02-01T22:06:49.615415 #40647]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-01T22:07:36.471161 #40667]  INFO -- : Executing: select * from clients where id = 1
+I, [2014-02-01T22:07:36.471996 #40667]  INFO -- : Executing: DELETE FROM tasks WHERE id = '1'
+I, [2014-02-01T22:07:36.484850 #40667]  INFO -- : Executing: DELETE FROM appointments WHERE id = '1'
+I, [2014-02-01T22:07:36.500277 #40667]  INFO -- : Executing: DELETE FROM clients WHERE id = '1'
+I, [2014-02-01T22:07:43.636341 #40685]  INFO -- : Executing: select * from clients where id = 1
+I, [2014-02-01T22:09:53.837610 #40735]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Antonia Lopez', '02/20/2014', 'Create folder', 'no')
+I, [2014-02-01T22:09:53.841908 #40735]  INFO -- : Executing: insert into clients(name, appointment, task) values('Antonia Lopez', '02/20/2014', 'Create folder')
+I, [2014-02-01T22:09:53.847915 #40735]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Antonia Lopez', '02/20/2014', 'Create folder', 'yes')
+I, [2014-02-01T22:12:25.331152 #40807]  INFO -- : Executing: select clients.* from clients where name LIKE '%Samantha%' order by name ASC
+I, [2014-02-01T22:12:43.314474 #40826]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Samantha Passman', '02/10/2014', 'Create Outline', 'no')
+I, [2014-02-01T22:12:43.346344 #40826]  INFO -- : Executing: insert into clients(name, appointment, task) values('Samantha Passman', '02/10/2014', 'Create Outline')
+I, [2014-02-01T22:12:43.359205 #40826]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Samantha Passman', '02/10/2014', 'Create Outline', 'yes')
+I, [2014-02-01T22:12:59.805002 #40843]  INFO -- : Executing: select clients.* from clients where name LIKE '%Sam%' order by name ASC
+I, [2014-02-01T22:33:36.236350 #41111]  INFO -- : Executing: select clients.* from clients where name LIKE '%Sam%' order by name ASC
+I, [2014-02-01T22:33:47.441926 #41129]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Samantha Passman', '02/10/2014', 'Create Outline', 'no')
+I, [2014-02-01T22:33:47.458117 #41129]  INFO -- : Executing: insert into clients(name, appointment, task) values('Samantha Passman', '02/10/2014', 'Create Outline')
+I, [2014-02-01T22:33:47.468232 #41129]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Samantha Passman', '02/10/2014', 'Create Outline', 'yes')
+I, [2014-02-01T22:33:55.758881 #41147]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-01T22:34:10.386479 #41165]  INFO -- : Executing: select * from clients where id = 6
+I, [2014-02-01T22:34:10.387184 #41165]  INFO -- : Executing: DELETE FROM tasks WHERE id = '6'
+I, [2014-02-01T22:34:10.397079 #41165]  INFO -- : Executing: DELETE FROM appointments WHERE id = '6'
+I, [2014-02-01T22:34:10.401496 #41165]  INFO -- : Executing: DELETE FROM clients WHERE id = '6'
+I, [2014-02-01T22:35:24.538653 #41189]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Sam Cook' ORDER by name ASC
+I, [2014-02-01T22:35:45.363559 #41212]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Samantha Passman' ORDER by name ASC
+I, [2014-02-01T22:47:50.792436 #41461]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Keisha Goodwin', '02/22/2014', 'Read docs', 'no')
+I, [2014-02-01T22:47:50.813774 #41461]  INFO -- : Executing: insert into clients(name, appointment, task) values('Keisha Goodwin', '02/22/2014', 'Read docs')
+I, [2014-02-01T22:47:50.820139 #41461]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Keisha Goodwin', '02/22/2014', 'Read docs', 'yes')
+I, [2014-02-01T22:48:49.344131 #41481]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.task, tasks.taskCompleted FROM tasks WHERE tasks.taskCompleted = 'no'
+I, [2014-02-01T22:49:11.816646 #41500]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Keisha Goodwin', '02/22/2014', 'Read docs', 'no')
+I, [2014-02-01T22:49:11.843751 #41500]  INFO -- : Executing: insert into clients(name, appointment, task) values('Keisha Goodwin', '02/22/2014', 'Read docs')
+I, [2014-02-01T22:49:11.851662 #41500]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Keisha Goodwin', '02/22/2014', 'Read docs', 'no')
+I, [2014-02-01T22:49:15.078113 #41517]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Keisha Goodwin', '02/22/2014', 'Read docs', 'no')
+I, [2014-02-01T22:49:15.106858 #41517]  INFO -- : Executing: insert into clients(name, appointment, task) values('Keisha Goodwin', '02/22/2014', 'Read docs')
+I, [2014-02-01T22:49:15.115430 #41517]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Keisha Goodwin', '02/22/2014', 'Read docs', 'no')
+I, [2014-02-01T22:49:18.203152 #41534]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.task, tasks.taskCompleted FROM tasks WHERE tasks.taskCompleted = 'no'
+I, [2014-02-01T22:51:06.593632 #41601]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Keisha Goodwin', '02/22/2014', 'Read docs', 'no')
+I, [2014-02-01T22:51:06.603111 #41601]  INFO -- : Executing: insert into clients(name, appointment, task) values('Keisha Goodwin', '02/22/2014', 'Read docs')
+I, [2014-02-01T22:51:06.604963 #41601]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Keisha Goodwin', '02/22/2014', 'Read docs', 'no')
+I, [2014-02-01T23:09:33.651500 #41905]  INFO -- : Executing: select * from clients where id = 14
+I, [2014-02-01T23:12:28.366548 #42039]  INFO -- : Executing: select * from clients where id = 14
+I, [2014-02-01T23:13:20.320993 #42100]  INFO -- : Executing: select * from clients where id = 14
+I, [2014-02-01T23:13:47.554303 #42145]  INFO -- : Executing: select * from clients where id = 14
+I, [2014-02-01T23:13:47.554978 #42145]  INFO -- : Executing: select * from appointments where id = 14
+I, [2014-02-01T23:14:08.673611 #42189]  INFO -- : Executing: select * from clients where id = 14
+I, [2014-02-01T23:14:08.682633 #42189]  INFO -- : Executing: select * from appointments where id = 14
+I, [2014-02-01T23:14:08.684147 #42189]  INFO -- : Executing: select * from tasks where id = 14
+I, [2014-02-01T23:14:08.685386 #42189]  INFO -- : Executing: update clients set name = 'Ke ke Goodwin', appointment = '02/22/2014', task = 'Read docs' where id = 14
+I, [2014-02-01T23:14:08.703621 #42189]  INFO -- : Executing: update appointments set name = 'Ke ke Goodwin', appointment = '02/22/2014', task = 'Read docs', needAppointment = 'no' where id = 14
+I, [2014-02-01T23:14:08.715219 #42189]  INFO -- : Executing: update tasks set name = 'Ke ke Goodwin', appointment = '02/22/2014', task = 'Read docs', taskCompleted = 'no' where id = 14
+I, [2014-02-01T23:40:22.092136 #43086]  INFO -- : Executing: select * from clients where id = 14
+I, [2014-02-01T23:40:22.093083 #43086]  INFO -- : Executing: select * from appointments where id = 14
+I, [2014-02-01T23:40:22.093401 #43086]  INFO -- : Executing: select * from tasks where id = 14
+I, [2014-02-01T23:40:22.093709 #43086]  INFO -- : Executing: update clients set name = 'Kee Goodwin', appointment = '02/22/2014', task = 'Read docs' where id = 14
+I, [2014-02-01T23:40:22.096830 #43086]  INFO -- : Executing: update appointments set name = 'Kee Goodwin', appointment = '02/22/2014', task = 'Read docs', needAppointment = 'no' where id = 14
+I, [2014-02-01T23:40:22.098486 #43086]  INFO -- : Executing: update tasks set name = 'Kee Goodwin', appointment = '02/22/2014', task = 'Read docs', taskCompleted = 'no' where id = 14
+I, [2014-02-02T00:29:46.575195 #44868]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-02T00:31:10.571943 #44890]  INFO -- : Executing: select clients.* from clients where name LIKE '%Samantha%' order by name ASC
+I, [2014-02-02T00:47:16.919298 #45475]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Samantha' ORDER by name ASC
+I, [2014-02-02T00:47:39.681737 #45494]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Samantha Passman' ORDER by name ASC
+I, [2014-02-02T00:54:55.955522 #46171]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Sam Adams' ORDER by name ASC
+I, [2014-02-02T01:12:56.724472 #46590]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Samantha Passman' ORDER by name ASC
+I, [2014-02-02T01:25:57.692072 #47053]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Sammy Cole', '02/20/2014', 'Read docs', 'no')
+I, [2014-02-02T01:25:57.706632 #47053]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sammy Cole', '02/20/2014', 'Read docs')
+I, [2014-02-02T01:25:57.716338 #47053]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Sammy Cole', '02/20/2014', 'Read docs', 'no')
+I, [2014-02-02T01:26:49.234148 #47116]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.needAppointment FROM appointments WHERE appointments.needAppointment = 'yes'
+I, [2014-02-02T02:17:38.466491 #49572]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'

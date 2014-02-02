@@ -29,5 +29,4 @@ def create_tables(database_connection)
   database_connection.execute("CREATE TABLE clients (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50), appointment varchar(10), task varchar(100))")
   database_connection.execute("CREATE TABLE appointments (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50), appointment varchar(10), task varchar(100), needAppointment varchar(10))")
   database_connection.execute("CREATE TABLE tasks (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50), appointment varchar(10), task varchar(100), taskCompleted varchar(10))")
-
 end
