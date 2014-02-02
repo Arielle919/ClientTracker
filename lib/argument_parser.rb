@@ -41,12 +41,10 @@ class ArgumentParser
   end
 
   def self.validate options
-
     errors = []
     if options[:name].nil? or options[:name].empty?
       errors << "You must provide the name for the client you are adding.\n"
     end
-
     missing_things = []
     missing_things << "task" unless options[:task]
     missing_things << "appointment" unless options[:appointment]

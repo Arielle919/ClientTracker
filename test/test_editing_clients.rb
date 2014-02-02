@@ -26,23 +26,22 @@ class TestEditingClients < ClientTest
     assert_command_output expected, command
   end
 
-  def test_attempting_to_update_with_bad_data
-    skip
-    client = Client.new(name: "Sam Adams", appointment: "01/20/2014", task: "Sign Docs")
+  def test_attempting_to_update_with_bad_appointment_data
+    client = Client.new(name: "Sam Adams", appointment: "January/20/2014", task: "Sign Docs")
     client.save
     id = client.id
-    command = "./clienttracker edit --id #{id} --name 'Sam Adams' --appointment JANUARY/20/2014 --task 'Sign Docs'"
-    expected = "Client #{id} can't be updated.  Date must be in this format: mm/dd/yyyy."
+    command = "./clienttracker edit --id #{id} --name 'Sam Adams' --appointment January/20/2014 --task 'Sign Docs'"
+    expected = "Client can't be updated.  Date must be in this format: mm/dd/yyyy."
     assert_command_output expected, command
   end
 
   def test_attempting_to_update_partial_data
-    skip
+    # skip
     client = Client.new(name: "Sam Adams", appointment: "01/20/2014", task: "Sign Docs")
     client.save
     id = client.id
-    command = "./clienttracker edit --id #{id} --name 'Sam Adams'"
-    expected = "Client #{id} is now named Sam Adams, 01/20/2014, Sign Docs."
+    command = "./clienttracker edit --id #{id} --name 'Sammy Adams'"
+    expected = "Client #{id} is now named Sammy Adams, 01/20/2014, Sign Docs."
     assert_command_output expected, command
   end
 end

@@ -109,6 +109,12 @@ class ClientTracker
   end
 
   def edit_client()
+  case options[:appointment]
+  when /January/, /February/, /March/, /April/, /May/, /June/, /July/
+      puts "Client can't be updated.  Date must be in this format: mm/dd/yyyy."
+  when /August/, /September/, /October/, /November/, /December/
+      puts "Client can't be updated.  Date must be in this format: mm/dd/yyyy."
+  else
     if client = Client.find(options[:id])
       client.update(options)
       puts "Client #{client.id} is now named #{client.name}, #{client.appointment}, #{client.task}."
@@ -122,6 +128,13 @@ class ClientTracker
       puts "Client #{options[:id]} couldn't be found."
     end
   end
+end
+
+  # def validate_edit()
+  #   if options[:appointment] =~ /JANUARY/
+  #     puts "Client can't be updated.  Date must be in this format: mm/dd/yyyy."
+  #   end
+  # end
 
 end
 

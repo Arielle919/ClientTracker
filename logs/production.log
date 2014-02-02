@@ -719,3 +719,36 @@ I, [2014-02-02T01:25:57.706632 #47053]  INFO -- : Executing: insert into clients
 I, [2014-02-02T01:25:57.716338 #47053]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Sammy Cole', '02/20/2014', 'Read docs', 'no')
 I, [2014-02-02T01:26:49.234148 #47116]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.needAppointment FROM appointments WHERE appointments.needAppointment = 'yes'
 I, [2014-02-02T02:17:38.466491 #49572]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'
+I, [2014-02-02T13:58:54.727060 #8820]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-02T13:59:28.816354 #8840]  INFO -- : Executing: select * from clients where id = 
+I, [2014-02-02T13:59:48.098297 #8859]  INFO -- : Executing: select * from clients where id = 
+I, [2014-02-02T14:01:14.072203 #8881]  INFO -- : Executing: select * from clients where id = 
+I, [2014-02-02T14:03:47.344117 #8933]  INFO -- : Executing: select * from clients where id = 
+I, [2014-02-02T14:03:54.585170 #8951]  INFO -- : Executing: select * from clients where id = 
+I, [2014-02-02T14:04:12.347984 #8985]  INFO -- : Executing: select * from clients where id = 
+I, [2014-02-02T14:06:39.416146 #9029]  INFO -- : Executing: select * from clients where id = 
+I, [2014-02-02T14:06:43.901634 #9046]  INFO -- : Executing: select * from clients where id = 
+I, [2014-02-02T14:15:44.665977 #3485]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-02T14:16:01.852518 #3505]  INFO -- : Executing: select * from clients where id = 7
+I, [2014-02-02T14:16:01.852991 #3505]  INFO -- : Executing: update clients set name = 'Sam Adams', appointment = '02/12/2014', task = 'Need Paperwork' where id = 7
+I, [2014-02-02T14:16:19.226476 #3526]  INFO -- : Executing: select * from clients where id = 7
+I, [2014-02-02T14:16:19.227467 #3526]  INFO -- : Executing: update clients set name = 'Sammy Adams', appointment = '02/12/2014', task = 'Need Paperwork' where id = 7
+I, [2014-02-02T14:16:23.949090 #3543]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-02T14:33:16.126223 #4842]  INFO -- : Executing: select * from clients where id = 7
+I, [2014-02-02T14:33:16.126831 #4842]  INFO -- : Executing: update clients set name = 'Sammy Adams', appointment = 'JANUARY/20/2014', task = 'Need Paperwork' where id = 7
+I, [2014-02-02T14:33:38.880376 #4860]  INFO -- : Executing: select * from clients where id = 7
+I, [2014-02-02T14:33:38.880920 #4860]  INFO -- : Executing: update clients set name = 'Sammy Adams', appointment = 'FEBRUARY/20/2014', task = 'Need Paperwork' where id = 7
+I, [2014-02-02T15:10:50.956658 #5474]  INFO -- : Executing: select * from clients where id = 7
+I, [2014-02-02T15:10:50.957309 #5474]  INFO -- : Executing: update clients set name = 'Sammy Adams', appointment = 'JAN/21/2014', task = 'Need Paperwork' where id = 7
+I, [2014-02-02T15:12:38.916240 #5530]  INFO -- : Executing: select * from clients where id = 7
+I, [2014-02-02T15:12:38.916935 #5530]  INFO -- : Executing: update clients set name = 'Sammy Adams', appointment = 'JAN/21/2014', task = 'Need Paperwork' where id = 7
+I, [2014-02-02T15:13:15.791420 #5566]  INFO -- : Executing: select * from clients where id = 7
+I, [2014-02-02T15:13:15.791986 #5566]  INFO -- : Executing: update clients set name = 'Sammy Adams', appointment = 'JAN/21/2014', task = 'Need Paperwork' where id = 7
+I, [2014-02-02T15:17:24.065818 #5730]  INFO -- : Executing: select * from clients where id = 7
+I, [2014-02-02T15:17:24.066481 #5730]  INFO -- : Executing: update clients set name = 'Sammy Adams', appointment = 'JAN/21/2014', task = 'Need Paperwork' where id = 7
+I, [2014-02-02T15:23:50.736844 #5797]  INFO -- : Executing: select * from clients where id = 7
+I, [2014-02-02T15:23:50.737412 #5797]  INFO -- : Executing: update clients set name = 'Sammy Adams', appointment = 'JAN/21/2014', task = 'Need Paperwork' where id = 7
+I, [2014-02-02T15:24:53.264165 #5883]  INFO -- : Executing: select * from clients where id = 7
+I, [2014-02-02T15:24:53.264920 #5883]  INFO -- : Executing: update clients set name = 'Sammy Adams', appointment = 'JAN/21/2014', task = 'Need Paperwork' where id = 7
+I, [2014-02-02T15:25:15.156406 #5918]  INFO -- : Executing: select * from clients where id = 7
+I, [2014-02-02T15:25:15.156976 #5918]  INFO -- : Executing: update clients set name = 'Sammy Adams', appointment = 'JAN/21/2014', task = 'Need Paperwork' where id = 7
