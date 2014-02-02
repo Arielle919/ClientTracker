@@ -823,3 +823,19 @@ I, [2014-02-02T16:19:51.372093 #7711]  INFO -- : Executing: update clients set n
 I, [2014-02-02T16:19:51.386317 #7711]  INFO -- : Executing: update appointments set name = 'Danielle Adams', appointment = 'none', task = 'Go over Paperwork', needAppointment = 'yes' where id = 22
 I, [2014-02-02T16:19:51.391845 #7711]  INFO -- : Executing: update tasks set name = 'Danielle Adams', appointment = 'none', task = 'Go over Paperwork', taskCompleted = 'no' where id = 22
 I, [2014-02-02T16:21:14.109170 #7736]  INFO -- : Executing: select clients.* from clients where name LIKE '%Petey%' order by name ASC
+I, [2014-02-02T16:30:21.871587 #8448]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-02T16:31:04.144904 #8473]  INFO -- : Executing: select * from clients where id = 22
+I, [2014-02-02T16:31:04.145878 #8473]  INFO -- : Executing: update clients set name = 'Dani Adams', appointment = 'none', task = 'Go over Paperwork' where id = 22
+I, [2014-02-02T16:33:35.301087 #8540]  INFO -- : Executing: select * from clients where id = 22
+I, [2014-02-02T16:33:35.301683 #8540]  INFO -- : Executing: update clients set name = 'Honey Adams', appointment = 'none', task = 'Go over Paperwork' where id = 22
+I, [2014-02-02T16:33:35.312416 #8540]  INFO -- : Executing: select * from appointments where id = 22
+I, [2014-02-02T16:33:35.312889 #8540]  INFO -- : Executing: update appointments set name = 'Honey Adams', appointment = 'none', task = 'Go over Paperwork', needAppointment = 'yes' where id = 22
+I, [2014-02-02T16:33:35.315286 #8540]  INFO -- : Executing: select * from tasks where id = 22
+I, [2014-02-02T16:33:35.315561 #8540]  INFO -- : Executing: update tasks set name = 'Honey Adams', appointment = 'none', task = 'Go over Paperwork', taskCompleted = 'no' where id = 22
+I, [2014-02-02T16:37:29.231676 #8759]  INFO -- : Executing: select * from clients where id = 22
+I, [2014-02-02T16:37:29.233544 #8759]  INFO -- : Executing: update clients set name = 'Honey Adams', appointment = 'none', task = 'Go over Paperwork' where id = 22
+I, [2014-02-02T16:37:29.241051 #8759]  INFO -- : Executing: select * from appointments where id = 22
+I, [2014-02-02T16:37:29.241693 #8759]  INFO -- : Executing: update appointments set name = 'Honey Adams', appointment = 'none', task = 'Go over Paperwork', needAppointment = 'yes' where id = 22
+I, [2014-02-02T16:37:29.251528 #8759]  INFO -- : Executing: select * from tasks where id = 22
+I, [2014-02-02T16:37:29.252221 #8759]  INFO -- : Executing: update tasks set name = 'Honey Adams', appointment = 'none', task = 'Go over Paperwork', taskCompleted = 'no' where id = 22
+I, [2014-02-02T17:02:18.316170 #9656]  INFO -- : Executing: SELECT * FROM clients
