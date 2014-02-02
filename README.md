@@ -30,7 +30,7 @@ Feature List:
 Interesting Queries:
 -------------------
 <ul>
-  <li>View total days spent with client</li>
-  <li> View a total list of clients that need follow up</li>
+  <li>View total appointments spent with client</li>
+  <li> View a total list of clients that need appointments</li>
   <li> View a total list of task "over all" not completed
 </ul>

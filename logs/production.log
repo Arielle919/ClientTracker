@@ -603,3 +603,34 @@ I, [2014-02-01T19:55:19.618797 #39207]  INFO -- : Executing: CREATE TABLE tasks 
 I, [2014-02-01T19:56:01.513537 #39244]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Sam Cook', 'none', 'none', 'yes')
 I, [2014-02-01T19:56:01.517317 #39244]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Cook', 'none', 'none')
 I, [2014-02-01T19:56:01.520238 #39244]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Sam Cook', 'none', 'none', 'no')
+I, [2014-02-01T20:27:42.523684 #39610]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.taskCompleted FROM tasks WHERE tasks.taskCompleted = 'no'
+I, [2014-02-01T20:28:51.988627 #39640]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Sam Cook', 'none', 'fill out forms', 'yes')
+I, [2014-02-01T20:28:51.992243 #39640]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Cook', 'none', 'fill out forms')
+I, [2014-02-01T20:28:51.994081 #39640]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Sam Cook', 'none', 'fill out forms', 'no')
+I, [2014-02-01T20:29:17.950286 #39661]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Tally Smith', 'none', 'Sign Docs', 'yes')
+I, [2014-02-01T20:29:17.953891 #39661]  INFO -- : Executing: insert into clients(name, appointment, task) values('Tally Smith', 'none', 'Sign Docs')
+I, [2014-02-01T20:29:17.956301 #39661]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Tally Smith', 'none', 'Sign Docs', 'no')
+I, [2014-02-01T20:29:47.710856 #39680]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Cassey Giles', 'none', 'Sign Files', 'yes')
+I, [2014-02-01T20:29:47.733421 #39680]  INFO -- : Executing: insert into clients(name, appointment, task) values('Cassey Giles', 'none', 'Sign Files')
+I, [2014-02-01T20:29:47.746082 #39680]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Cassey Giles', 'none', 'Sign Files', 'no')
+I, [2014-02-01T20:29:52.926114 #39698]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.taskCompleted FROM tasks WHERE tasks.taskCompleted = 'no'
+I, [2014-02-01T20:30:33.281241 #39732]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.task, tasks.taskCompleted FROM tasks WHERE tasks.taskCompleted = 'no'
+I, [2014-02-01T20:31:09.409203 #39753]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-01T20:36:22.102882 #39798]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Cassey Giles', 'none', 'Sign Files', 'yes')
+I, [2014-02-01T20:36:22.108973 #39798]  INFO -- : Executing: insert into clients(name, appointment, task) values('Cassey Giles', 'none', 'Sign Files')
+I, [2014-02-01T20:36:22.128902 #39798]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Cassey Giles', 'none', 'Sign Files', 'no')
+I, [2014-02-01T20:37:50.338149 #39823]  INFO -- : Executing: select * from clients where id = 5
+I, [2014-02-01T20:37:50.339106 #39823]  INFO -- : Executing: DELETE FROM appointments WHERE id = '5'
+I, [2014-02-01T20:37:50.345706 #39823]  INFO -- : Executing: DELETE FROM clients WHERE id = '5'
+I, [2014-02-01T20:41:20.381951 #39884]  INFO -- : Executing: select * from clients where id = 5
+I, [2014-02-01T20:41:38.063675 #39902]  INFO -- : Executing: select * from clients where id = 4
+I, [2014-02-01T20:41:38.064801 #39902]  INFO -- : Executing: DELETE FROM tasks WHERE id = '4'
+I, [2014-02-01T20:41:38.087498 #39902]  INFO -- : Executing: DELETE FROM appointments WHERE id = '4'
+I, [2014-02-01T20:41:38.097156 #39902]  INFO -- : Executing: DELETE FROM clients WHERE id = '4'
+I, [2014-02-01T20:41:53.827108 #39920]  INFO -- : Executing: select * from clients where id = 5
+I, [2014-02-01T20:43:14.715249 #39964]  INFO -- : Executing: select * from clients where id = 3
+I, [2014-02-01T20:43:14.716297 #39964]  INFO -- : Executing: DELETE FROM tasks WHERE id = '3'
+I, [2014-02-01T20:43:14.719411 #39964]  INFO -- : Executing: DELETE FROM appointments WHERE id = '3'
+I, [2014-02-01T20:43:14.723211 #39964]  INFO -- : Executing: DELETE FROM clients WHERE id = '3'
+I, [2014-02-01T20:43:51.648976 #39984]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-01T20:45:02.515251 #40008]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.task, tasks.taskCompleted FROM tasks WHERE tasks.taskCompleted = 'no'

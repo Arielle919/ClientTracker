@@ -15270,3 +15270,6 @@ I, [2014-02-01T19:00:21.812018 #38135]  INFO -- : Executing: CREATE TABLE appoin
 I, [2014-02-01T19:55:38.231931 #39226]  INFO -- : Executing: CREATE TABLE clients (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50), appointment varchar(10), task varchar(100))
 I, [2014-02-01T19:55:38.236074 #39226]  INFO -- : Executing: CREATE TABLE appointments (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50), appointment varchar(10), task varchar(100), needAppointment varchar(10))
 I, [2014-02-01T19:55:38.238371 #39226]  INFO -- : Executing: CREATE TABLE tasks (id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(50), appointment varchar(10), task varchar(100), taskCompleted varchar(10))
+I, [2014-02-01T20:11:10.604657 #39378]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Sam Cook', 'none', 'none', 'yes')
+I, [2014-02-01T20:11:10.608240 #39378]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Cook', 'none', 'none')
+I, [2014-02-01T20:11:10.611024 #39378]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Sam Cook', 'none', 'none', 'no')

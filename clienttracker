@@ -46,16 +46,20 @@ class ClientTracker
     elsif options[:command] == "delete"
       if client = Client.find(options[:id])
       database = Environment.database_connection
-      resultsB = database.execute("DELETE FROM appointments WHERE id = '#{client.id}'")
-      resultsC = database.execute("DELETE FROM clients WHERE id = '#{client.id}'")
-      resultsB
-      resultsC
+      delTasks = database.execute("DELETE FROM tasks WHERE id = '#{client.id}'")
+      delApps = database.execute("DELETE FROM appointments WHERE id = '#{client.id}'")
+      delClients = database.execute("DELETE FROM clients WHERE id = '#{client.id}'")
+      delApps
+      delClients
+      delTasks
         puts "client '#{client.id}' named: '#{client.name}' was deleted."
       end
     elsif options[:command] == "client appointments"
       list_appointments()
     elsif options[:command] == "need appointments"
       need_appointments()
+    elsif options[:command] == "task processing"
+      task_processing()
     elsif options[:command] == "edit"
       if client = Client.find(options[:id])
         appointments = Appointment.find(options[:id])
@@ -82,30 +86,37 @@ class ClientTracker
     }
   end
   def list_appointments()
-    #if appointments = Appointment.find(options[:id])
-      appointment_id = options[:id]
-      appointment_name = options[:name]
-      database = Environment.database_connection
-      database.results_as_hash = false
-      puts "All Appointments:"
-      results_appointments = database.execute("SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = '#{appointment_name}' ORDER by name ASC")
-      results_appointments.each_slice(1) { |apps|
-          puts apps.join(" ")
-      }
-    #end
+    appointment_id = options[:id]
+    appointment_name = options[:name]
+    database = Environment.database_connection
+    database.results_as_hash = false
+    puts "All Appointments:"
+    results_appointments = database.execute("SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = '#{appointment_name}' ORDER by name ASC")
+    results_appointments.each_slice(1) { |apps|
+        puts apps.join(" ")
+    }
   end
 
   def need_appointments()
-    #if appointments = Appointment.find(options[:id])
-      appointment_id = options[:id]
-      database = Environment.database_connection
-      database.results_as_hash = false
-      puts "Clients Need Appointments:"
-      needApp = database.execute("SELECT appointments.id, appointments.name, appointments.needAppointment FROM appointments WHERE appointments.needAppointment = 'yes'")
-      needApp.each_slice(1) { |needapps|
-          puts needapps.join(" ")
-      }
-    #end
+    appointment_id = options[:id]
+    database = Environment.database_connection
+    database.results_as_hash = false
+    puts "Clients Need Appointments:"
+    needApp = database.execute("SELECT appointments.id, appointments.name, appointments.needAppointment FROM appointments WHERE appointments.needAppointment = 'yes'")
+    needApp.each_slice(1) { |needapps|
+        puts needapps.join(" ")
+    }
+  end
+
+  def task_processing()
+    task_id = options[:id]
+    database = Environment.database_connection
+    database.results_as_hash = false
+    puts "Uncompleted Task:"
+    uncomTask = database.execute("SELECT tasks.id, tasks.name, tasks.task, tasks.taskCompleted FROM tasks WHERE tasks.taskCompleted = 'no'")
+    uncomTask.each_slice(1) { |task|
+        puts task.join(" ")
+    }
   end
 
   def search_clients_for(search_term)
