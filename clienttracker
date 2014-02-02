@@ -23,6 +23,7 @@ class ClientTracker
     database = Environment.database_connection
     # chars = ClientTracker.new
     # char = chars.alphabet
+    # appointment_name = Appointment.find(options[:name])
 
     if options[:command] == "search"
       search_term = ask("What do you want to search for?")
@@ -31,6 +32,8 @@ class ClientTracker
       error_messages = ArgumentParser.validate(options)
       if error_messages.empty?
         client = Client.new(options)
+        appointments = Appointment.new(options)
+        appointments.save
         client.save
         puts "A client named #{client.name}, #{client.appointment}, #{client.task} was created."
       else
@@ -38,13 +41,25 @@ class ClientTracker
       end
     elsif options[:command] == "list"
       list_clients()
+    elsif options[:command] == "delete"
+      if client = Client.find(options[:id])
+      database = Environment.database_connection
+      resultsB = database.execute("DELETE FROM appointments WHERE id = '#{client.id}'")
+      resultsC = database.execute("DELETE FROM clients WHERE id = '#{client.id}'")
+      resultsB
+      resultsC
+        puts "client '#{client.id}' named: '#{client.name}' was deleted."
+      end
+    elsif options[:command] == "client appointments"
+      list_appointments()
+    elsif options[:command] == "need appointments"
+      need_appointments()
     elsif options[:command] == "edit"
       if client = Client.find(options[:id])
+        appointments = Appointment.find(options[:id])
         client.update(options)
+        appointments.update(options)
         puts "Client #{client.id} is now named #{client.name}, #{client.appointment}, #{client.task}."
-      # elsif client = Client.find(options[:id]) && "#{client.appointment}".include?(char) == true
-      # elsif client = Client.find(options[:id]) && "#{client.appointment}".include?(char) == true
-      # puts "Client #{id} can't be updated.  Date must be in this format: mm/dd/yyyy."
       else
         puts "Client #{options[:id]} couldn't be found."
       end
@@ -55,7 +70,38 @@ class ClientTracker
 
   def list_clients()
     puts "All Clients:"
-    puts Client.all
+    database = Environment.database_connection
+    show_clients = database.execute("SELECT * FROM clients")
+    # print show_clients.join(" ") + "\n"
+    show_clients.each_slice(1) { |line|
+    puts line.join(" ")
+    }
+  end
+  def list_appointments()
+    #if appointments = Appointment.find(options[:id])
+      appointment_id = options[:id]
+      appointment_name = options[:name]
+      database = Environment.database_connection
+      database.results_as_hash = false
+      puts "All Appointments:"
+      results_appointments = database.execute("SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = '#{appointment_name}' ORDER by name ASC")
+      results_appointments.each_slice(1) { |apps|
+          puts apps.join(" ")
+      }
+    #end
+  end
+
+  def need_appointments()
+    #if appointments = Appointment.find(options[:id])
+      appointment_id = options[:id]
+      database = Environment.database_connection
+      database.results_as_hash = false
+      puts "Clients Need Appointments:"
+      needApp = database.execute("SELECT appointments.id, appointments.name, appointments.needAppointment FROM appointments WHERE appointments.needAppointment = 'yes'")
+      needApp.each_slice(1) { |needapps|
+          puts needapps.join(" ")
+      }
+    #end
   end
 
   def search_clients_for(search_term)
@@ -64,7 +110,6 @@ class ClientTracker
   end
 
 end
-
 
 clienttracker = ClientTracker.new()
 clienttracker.main()

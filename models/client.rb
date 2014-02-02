@@ -1,5 +1,5 @@
 class Client
-  attr_accessor :name, :appointment, :task, :clientID, :needAppointment
+  attr_accessor :name, :appointment, :task
   attr_reader :id
 
   def initialize attributes = {}
@@ -23,7 +23,6 @@ class Client
       database.execute("update clients set name = '#{name}', appointment = '#{appointment}', task = '#{task}' where id = #{id}")
     else
       database.execute("insert into clients(name, appointment, task) values('#{name}', '#{appointment}', '#{task}')")
-      # database.execute("insert into appointments(clientID, name, appointment, needAppointment) values(@id, '#{name}', '#{appointment}', '#{needAppointment}')")
 
       @id = database.last_insert_row_id
     end
@@ -90,7 +89,7 @@ class Client
     # @name = attributes[:name]
     # ^ Long way
     # Short way:
-    [:name, :appointment, :task, :clientID, :needAppointment].each do |attr|
+    [:name, :appointment, :task].each do |attr|
       if attributes[attr]
         # self.calories = attributes[:calorie]
         self.send("#{attr}=", attributes[attr])
