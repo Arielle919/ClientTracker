@@ -54,8 +54,7 @@ class TestClient < ClientTest
   def test_find_returns_the_row_as_client_object
     client = Client.create(name: "Foo", appointment: "01/20/2014", task: "Sign Docs")
     found = Client.find(client.id)
-    # Ideally: assert_equal client, found
-    # Hacky way so that we can focus on today's material:
+
     assert_equal client.name, found.name
     assert_equal client.id, found.id
   end
@@ -96,11 +95,7 @@ class TestClient < ClientTest
     results = Client.all
     expected = ["Anna Adams", "Sam Adams", "Tim Ross"]
     actual = results.map{ |client| client.name }
-    # ^ is equivalent to:
-    # actual = []
-    # results.each do |client|
-    #   actual << client.name
-    # end
+
     assert_equal expected, actual
   end
 

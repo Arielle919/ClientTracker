@@ -7,7 +7,6 @@ class TestEditingClients < ClientTest
     id = client.id
     command = "./clienttracker edit --id #{id} --name 'Sam Adams' --appointment 01/20/2014 --task 'Sign Contract'"
     expected = "Client #{id} is now named Sam Adams, 01/20/2014, Sign Contract."
-    # What about the db?
     assert_command_output expected, command
   end
 
@@ -35,8 +34,7 @@ class TestEditingClients < ClientTest
     assert_command_output expected, command
   end
 
-  def test_attempting_to_update_partial_data
-    # skip
+  def test_attempting_to_update_partial_data_only_name
     client = Client.new(name: "Sam Adams", appointment: "01/20/2014", task: "Sign Docs")
     client.save
     id = client.id
