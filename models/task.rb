@@ -31,7 +31,7 @@ class Task
   def self.find id
     database = Environment.database_connection
     database.results_as_hash = true
-    results = database.execute("select * from tasks where id = #{id}")[0]
+    results = database.execute("select * from clients where id = #{id}")[0]
     if results
       taskID = Task.new(name: results["name"], appointment: results["appointment"], task: results["task"], taskCompleted: results["taskCompleted"])
       taskID.send("id=", results["id"])

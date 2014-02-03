@@ -116,13 +116,12 @@ class ClientTracker
         puts "Client can't be updated.  Date must be in this format: mm/dd/yyyy."
     else
       if client = Client.find(options[:id])
-        # appointments = Appointment.find(options[:id])
-        # tasks = Task.find(options[:id])
+        appointments = Appointment.find(options[:id])
+        tasks = Task.find(options[:id])
         client.update(options)
-        # appointments.update(options)
-        # tasks.update(options)
+        appointments.update(options)
+        tasks.update(options)
         puts "Client #{client.id} is now named #{client.name}, #{client.appointment}, #{client.task}."
-
       else
         puts "Client #{options[:id]} couldn't be found."
       end

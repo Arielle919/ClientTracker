@@ -839,3 +839,17 @@ I, [2014-02-02T16:37:29.241693 #8759]  INFO -- : Executing: update appointments 
 I, [2014-02-02T16:37:29.251528 #8759]  INFO -- : Executing: select * from tasks where id = 22
 I, [2014-02-02T16:37:29.252221 #8759]  INFO -- : Executing: update tasks set name = 'Honey Adams', appointment = 'none', task = 'Go over Paperwork', taskCompleted = 'no' where id = 22
 I, [2014-02-02T17:02:18.316170 #9656]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-02T17:52:21.165549 #11262]  INFO -- : Executing: select * from clients where id = 22
+I, [2014-02-02T17:52:21.166391 #11262]  INFO -- : Executing: update clients set name = 'Honey Adams', appointment = 'none', task = 'Go over Paperwork' where id = 22
+I, [2014-02-02T17:52:31.769236 #11280]  INFO -- : Executing: select * from clients where id = 22
+I, [2014-02-02T17:52:31.769772 #11280]  INFO -- : Executing: update clients set name = 'Honey Adamz', appointment = 'none', task = 'Go over Paperwork' where id = 22
+I, [2014-02-03T12:22:32.552817 #13735]  INFO -- : Executing: select * from clients where id = 22
+I, [2014-02-03T12:22:32.553296 #13735]  INFO -- : Executing: select * from clients where id = 22
+I, [2014-02-03T12:22:32.553489 #13735]  INFO -- : Executing: update clients set name = 'Dani Honeys', appointment = 'none', task = 'Go over Paperwork' where id = 22
+I, [2014-02-03T12:22:32.563008 #13735]  INFO -- : Executing: update appointments set name = 'Dani Honeys', appointment = 'none', task = 'Go over Paperwork', needAppointment = '' where id = 22
+I, [2014-02-03T12:25:26.770076 #13896]  INFO -- : Executing: select * from clients where id = 22
+I, [2014-02-03T12:25:26.770639 #13896]  INFO -- : Executing: select * from clients where id = 22
+I, [2014-02-03T12:25:26.770823 #13896]  INFO -- : Executing: select * from clients where id = 22
+I, [2014-02-03T12:25:26.771006 #13896]  INFO -- : Executing: update clients set name = 'Dani Coleman', appointment = 'none', task = 'Go over Paperwork' where id = 22
+I, [2014-02-03T12:25:26.783469 #13896]  INFO -- : Executing: update appointments set name = 'Dani Coleman', appointment = 'none', task = 'Go over Paperwork', needAppointment = '' where id = 22
+I, [2014-02-03T12:25:26.785245 #13896]  INFO -- : Executing: update tasks set name = 'Dani Coleman', appointment = 'none', task = 'Go over Paperwork', taskCompleted = '' where id = 22
