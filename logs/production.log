@@ -1428,3 +1428,13 @@ I, [2014-02-03T19:08:15.933367 #22371]  INFO -- : Executing: SELECT * FROM clien
 I, [2014-02-03T19:11:17.783701 #22414]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'
 I, [2014-02-03T19:13:46.911284 #22479]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'
 I, [2014-02-03T19:14:50.099095 #22508]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'
+I, [2014-02-03T20:16:13.545659 #23013]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-03T20:16:43.586258 #23032]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = '' ORDER by name ASC
+I, [2014-02-03T20:18:19.961803 #23069]  INFO -- : Executing: SELECT appointments.id, appointments.name FROM appointments WHERE appointments.needAppointment = 'yes'
+I, [2014-02-03T20:19:01.948489 #23089]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'
+I, [2014-02-03T20:19:30.703830 #23107]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'yes'
+I, [2014-02-03T20:22:38.120594 #23142]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-03T20:23:17.675616 #23161]  INFO -- : Executing: SELECT appointments.id, appointments.name FROM appointments WHERE appointments.needAppointment = 'yes'
+I, [2014-02-03T20:24:01.915081 #23181]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'
+I, [2014-02-03T20:24:41.051615 #23201]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'yes'
+I, [2014-02-03T20:25:43.674342 #23222]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Coleman' ORDER by name ASC
