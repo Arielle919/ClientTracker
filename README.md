@@ -3,7 +3,8 @@ ClientTracker
 
 How to Install and Use
 ----------------------
-Download the program, while in folder run "ClientTracker.rb"
+Download the program, while in folder
+run "rake bootstrap_database"
 
 Elevator Pitch:
 --------------
@@ -31,6 +32,9 @@ Interesting Queries:
 -------------------
 <ul>
   <li>View total appointments spent with client</li>
+  <li>View all clients that need appointments</li>
   <li> View a total list of clients that need appointments</li>
-  <li> View a total list of task "over all" not completed
+  <li> View a total list of task "over all" not completed</li>
+  <li> View a total list of task completed</li>
+
 </ul>

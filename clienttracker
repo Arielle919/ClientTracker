@@ -27,8 +27,10 @@ class ClientTracker
       list_appointments()
     elsif options[:command] == "need appointments"
       need_appointments()
-    elsif options[:command] == "task processing"
+    elsif options[:command] == "task incomplete"
       task_processing()
+    elsif options[:command] == "task complete"
+      task_complete()
     elsif options[:command] == "edit"
       edit_client()
     end
@@ -102,8 +104,18 @@ class ClientTracker
     task_id = options[:id]
     @database.results_as_hash = false
     puts "Incomplete Task:"
-    uncomTask = @database.execute("SELECT tasks.id, tasks.name, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'")
+    uncomTask = @database.execute("SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'")
     uncomTask.each_slice(1) { |task|
+        puts task.join(" ")
+    }
+  end
+
+  def task_complete()
+    task_id = options[:id]
+    @database.results_as_hash = false
+    puts "Task Complete:"
+    comTask = @database.execute("SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'yes'")
+    comTask.each_slice(1) { |task|
         puts task.join(" ")
     }
   end
