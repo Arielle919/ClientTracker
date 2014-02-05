@@ -1569,3 +1569,14 @@ I, [2014-02-04T21:27:14.932407 #34331]  INFO -- : Executing: SELECT tasks.id, ta
 I, [2014-02-04T21:27:42.544201 #34350]  INFO -- : Executing: select clients.* from clients where name LIKE '%Danielle Coleman %' order by name ASC
 I, [2014-02-04T21:27:54.482738 #34368]  INFO -- : Executing: select clients.* from clients where name LIKE '%%' order by name ASC
 I, [2014-02-04T21:28:12.017545 #34385]  INFO -- : Executing: select clients.* from clients where name LIKE '%Danielle%' order by name ASC
+I, [2014-02-05T09:37:09.228141 #34905]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-05T09:37:48.201081 #34924]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-05T09:38:11.380717 #34943]  INFO -- : Executing: SELECT appointments.id, appointments.name FROM appointments WHERE appointments.needAppointment = 'yes'
+I, [2014-02-05T09:38:39.069271 #34962]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'
+I, [2014-02-05T09:38:54.660557 #34980]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'yes'
+I, [2014-02-05T10:35:19.039022 #35192]  INFO -- : Executing: insert into appointments(name, appointment, task, needAppointment) values('Sam Adams', '01/02/2014', 'Read Docs', '')
+I, [2014-02-05T10:35:19.054185 #35192]  INFO -- : Executing: insert into clients(name, appointment, task) values('Sam Adams', '01/02/2014', 'Read Docs')
+I, [2014-02-05T10:35:19.074906 #35192]  INFO -- : Executing: insert into tasks(name, appointment, task, taskCompleted) values('Sam Adams', '01/02/2014', 'Read Docs', 'yes')
+I, [2014-02-05T10:35:34.931890 #35210]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-05T10:47:26.589093 #35592]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-05T10:48:11.378142 #35641]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE name = 'Danielle Coleman' ORDER by name ASC

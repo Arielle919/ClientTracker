@@ -33,6 +33,8 @@ class ClientTracker
       task_processing()
     elsif options[:command] == "task complete"
       task_complete()
+    elsif options[:command] == "client tasks"
+      list_task()
     elsif options[:command] == "edit"
       edit_client()
     end
@@ -50,7 +52,8 @@ class ClientTracker
       "LIST CLIENTS THAT NEED APPOINTMENT: ruby clienttracker 'need appointments'",
       "LIST APPOINTMENTS FOR 1 CLIENT: ruby clienttracker 'client appointments' --name 'client name'",
       "LIST INCOMPLETE TASK: ruby clienttracker 'task incomplete'",
-      "LIST COMPLETE TASK: ruby clienttracker 'task complete'"]
+      "LIST COMPLETE TASK: ruby clienttracker 'task complete'",
+      "LIST TASK FOR 1 CLIENT: ruby clienttracker 'client tasks' --name 'client name'"]
     directions.each_slice(1) { |line|
     puts line.join(" ").center(100)
     }
@@ -157,6 +160,21 @@ class ClientTracker
       puts line.join(" ".center(9))
     }
     comTask.each_slice(1) { |task|
+        puts task.join(" -- "+" ")
+    }
+  end
+
+  def list_task()
+    task_id = options[:id]
+    task_name = options[:name]
+    @database.results_as_hash = false
+    puts "All Tasks for #{task_name}:"
+    results_tasks = @database.execute("SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE name = '#{task_name}' ORDER by name ASC")
+    columns = ["ID", "NAME", "APPOINTMENT", "TASK"]
+    columns.each_slice(4) { |line|
+      puts line.join(" ".center(10))
+    }
+    results_tasks.each_slice(1) { |task|
         puts task.join(" -- "+" ")
     }
   end
