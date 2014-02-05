@@ -33,4 +33,20 @@ EOS
     assert_command_output expected, command
   end
 
+  def test_client_task_list_returns_relevant_results
+    sammy_cole = Task.create(name: "Sammy Cole", appointment: "02/01/2014", task: "Read Docs", taskCompleted: "yes")
+    sam_jones = Task.create(name: "Sam Jones", appointment: "02/02/2014", task: "Sign Paper", taskCompleted: "yes")
+    tim_collins = Task.create(name: "Tim Collins", appointment: "02/03/2014", task: "Sign Contract", taskCompleted: "yes")
+
+    command = "./clienttracker 'client tasks' --name 'Sammy Cole'"
+    expected = <<EOS.chomp
+All Tasks for #{sammy_cole.name}:
+ID          NAME          APPOINTMENT          TASK
+#{sammy_cole.id} --  Sammy Cole --  02/01/2014 --  Read Docs
+EOS
+    assert_command_output expected, command
+  end
+
 end
+
+

@@ -1580,3 +1580,5 @@ I, [2014-02-05T10:35:19.074906 #35192]  INFO -- : Executing: insert into tasks(n
 I, [2014-02-05T10:35:34.931890 #35210]  INFO -- : Executing: SELECT * FROM clients
 I, [2014-02-05T10:47:26.589093 #35592]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE name = 'Danielle Coleman' ORDER by name ASC
 I, [2014-02-05T10:48:11.378142 #35641]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-05T12:04:03.253336 #36578]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE name = '' ORDER by name ASC
+I, [2014-02-05T12:04:13.984557 #36596]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE name = 'Danielle Coleman' ORDER by name ASC
