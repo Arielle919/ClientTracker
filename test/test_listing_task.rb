@@ -10,11 +10,11 @@ def test_client_incomplete_task_list_returns_relevant_results
     command = "./clienttracker 'task incomplete'"
     expected = <<EOS.chomp
 Incomplete Task:
-#{sammy_cole.id} Sammy Cole none Read Docs
-#{sam_jones.id} Sam Jones none Sign Paper
-#{tim_collins.id} Tim Collins none Sign Contract
+ID          NAME          APPOINTMENT          TASK
+#{sammy_cole.id} --  Sammy Cole --  none --  Read Docs
+#{sam_jones.id} --  Sam Jones --  none --  Sign Paper
+#{tim_collins.id} --  Tim Collins --  none --  Sign Contract
 EOS
-    assert_command_output expected, command
   end
 
 def test_client_complete_task_list_returns_relevant_results
@@ -25,9 +25,10 @@ def test_client_complete_task_list_returns_relevant_results
     command = "./clienttracker 'task complete'"
     expected = <<EOS.chomp
 Task Complete:
-#{sammy_cole.id} Sammy Cole 02/01/2014 Read Docs
-#{sam_jones.id} Sam Jones 02/02/2014 Sign Paper
-#{tim_collins.id} Tim Collins 02/03/2014 Sign Contract
+ID         NAME         APPOINTMENT         TASK
+#{sammy_cole.id} --  Sammy Cole --  02/01/2014 --  Read Docs
+#{sam_jones.id} --  Sam Jones --  02/02/2014 --  Sign Paper
+#{tim_collins.id} --  Tim Collins --  02/03/2014 --  Sign Contract
 EOS
     assert_command_output expected, command
   end

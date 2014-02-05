@@ -9,7 +9,8 @@ def test_client_appointment_list_returns_relevant_results
     command = "./clienttracker 'client appointments' --name 'Sammy Cole'"
     expected = <<EOS.chomp
 All Appointments for #{sammy_cole.name}:
-#{sammy_cole.id} Sammy Cole 02/20/2014
+ID          NAME          APPOINTMENT
+#{sammy_cole.id} --  Sammy Cole --  02/20/2014
 EOS
     assert_command_output expected, command
   end
@@ -22,9 +23,10 @@ def test_client_need_appointment_list_returns_relevant_results
     command = "./clienttracker 'need appointments'"
     expected = <<EOS.chomp
 Clients Need Appointments:
-#{sammy_cole.id} Sammy Cole
-#{sam_jones.id} Sam Jones
-#{tim_collins.id} Tim Collins
+ID     NAME
+#{sammy_cole.id} --  Sammy Cole
+#{sam_jones.id} --  Sam Jones
+#{tim_collins.id} --  Tim Collins
 EOS
     assert_command_output expected, command
   end

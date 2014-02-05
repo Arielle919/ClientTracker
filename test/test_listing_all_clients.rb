@@ -9,9 +9,10 @@ class TestListingClients < ClientTest
     command = "./clienttracker list"
     expected = <<EOS.chomp
 All Clients:
-#{sam_adams.id} Sam Adams 01/20/2014 Sign Docs
-#{sam_jones.id} Sam Jones 01/27/2014 Sign Paper
-#{tim_collins.id} Tim Collins 01/25/2014 Sign Contract
+ID        NAME        APPOINTMENT        TASK
+#{sam_adams.id} -- Sam Adams -- 01/20/2014 -- Sign Docs
+#{sam_jones.id} -- Sam Jones -- 01/27/2014 -- Sign Paper
+#{tim_collins.id} -- Tim Collins -- 01/25/2014 -- Sign Contract
 EOS
     assert_command_output expected, command
   end

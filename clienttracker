@@ -15,7 +15,9 @@ class ClientTracker
   end
 
   def main
-    if options[:command] == "search"
+    if options[:command] == "start"
+      show_directions()
+    elsif options[:command] == "search"
       search_clients()
     elsif options[:command] == "add"
       add_clients()
@@ -34,6 +36,24 @@ class ClientTracker
     elsif options[:command] == "edit"
       edit_client()
     end
+  end
+
+  def show_directions()
+    directions = ["WELCOME TO CLIENT TRACKER",
+      "Client Tracker is a command application where you can create, edit, and save your clients.",
+      "INSTRUCTIONS:",
+      "CREATE CLIENT: ruby clienttracker add 'client name' --appointment mm/dd/yyyy --task 'client task'",
+      "EDIT CLIENT: ruby clienttracker edit 'client name' --appointment mm/dd/yyyy --task 'client task'",
+      "DELETE CLIENT: ruby clienttracker delete --id 01",
+      "LIST ALL CLIENTS ruby clienttracker 'list'",
+      "SEARCH CLIENT: ruby clienttracker search",
+      "LIST CLIENTS THAT NEED APPOINTMENT: ruby clienttracker 'need appointments'",
+      "LIST APPOINTMENTS FOR 1 CLIENT: ruby clienttracker 'client appointments' --name 'client name'",
+      "LIST INCOMPLETE TASK: ruby clienttracker 'task incomplete'",
+      "LIST COMPLETE TASK: ruby clienttracker 'task complete'"]
+    directions.each_slice(1) { |line|
+    puts line.join(" ").center(100)
+    }
   end
 
   def search_clients()
@@ -60,10 +80,15 @@ class ClientTracker
   def list_clients()
     puts "All Clients:"
     show_clients = @database.execute("SELECT * FROM clients")
+    columns = ["ID", "NAME", "APPOINTMENT", "TASK"]
+    columns.each_slice(4) { |line|
+      puts line.join(" ".center(8))
+    }
     show_clients.each_slice(1) { |line|
-    puts line.join(" ")
+    puts line.join(" --"+" ")
     }
   end
+
 
   def delete_rows()
     if client = Client.find(options[:id])
@@ -85,8 +110,12 @@ class ClientTracker
     @database.results_as_hash = false
     puts "All Appointments for #{appointment_name}:"
     results_appointments = @database.execute("SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = '#{appointment_name}' ORDER by name ASC")
+    columns = ["ID", "NAME", "APPOINTMENT"]
+    columns.each_slice(3) { |line|
+      puts line.join(" ".center(10))
+    }
     results_appointments.each_slice(1) { |apps|
-        puts apps.join(" ")
+        puts apps.join(" -- "+" ")
     }
   end
 
@@ -94,9 +123,13 @@ class ClientTracker
     appointment_id = options[:id]
     @database.results_as_hash = false
     puts "Clients Need Appointments:"
+    columns = ["ID", "NAME"]
+    columns.each_slice(2) { |line|
+      puts line.join(" ".center(5))
+    }
     needApp = @database.execute("SELECT appointments.id, appointments.name FROM appointments WHERE appointments.needAppointment = 'yes'")
     needApp.each_slice(1) { |needapps|
-        puts needapps.join(" ")
+        puts needapps.join(" -- "+" ")
     }
   end
 
@@ -105,8 +138,12 @@ class ClientTracker
     @database.results_as_hash = false
     puts "Incomplete Task:"
     uncomTask = @database.execute("SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'")
+    columns = ["ID", "NAME", "APPOINTMENT", "TASK"]
+    columns.each_slice(4) { |line|
+      puts line.join(" ".center(10))
+    }
     uncomTask.each_slice(1) { |task|
-        puts task.join(" ")
+        puts task.join(" -- "+" ")
     }
   end
 
@@ -115,8 +152,12 @@ class ClientTracker
     @database.results_as_hash = false
     puts "Task Complete:"
     comTask = @database.execute("SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'yes'")
+    columns = ["ID", "NAME", "APPOINTMENT", "TASK"]
+    columns.each_slice(4) { |line|
+      puts line.join(" ".center(9))
+    }
     comTask.each_slice(1) { |task|
-        puts task.join(" ")
+        puts task.join(" -- "+" ")
     }
   end
 
@@ -144,3 +185,4 @@ end
 
 clienttracker = ClientTracker.new()
 clienttracker.main()
+

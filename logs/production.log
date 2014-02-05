@@ -1438,3 +1438,134 @@ I, [2014-02-03T20:23:17.675616 #23161]  INFO -- : Executing: SELECT appointments
 I, [2014-02-03T20:24:01.915081 #23181]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'
 I, [2014-02-03T20:24:41.051615 #23201]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'yes'
 I, [2014-02-03T20:25:43.674342 #23222]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-04T11:30:58.333077 #25170]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T11:33:11.300101 #25203]  INFO -- : Executing: SELECT appointments.id, appointments.name FROM appointments WHERE appointments.needAppointment = 'yes'
+I, [2014-02-04T11:33:50.886601 #25222]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle' ORDER by name ASC
+I, [2014-02-04T11:33:59.256958 #25240]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Adams' ORDER by name ASC
+I, [2014-02-04T11:34:07.354369 #25257]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-04T11:34:23.368899 #25277]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'
+I, [2014-02-04T11:34:30.609524 #25295]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'yes'
+I, [2014-02-04T19:44:43.766752 #29761]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:05:12.475883 #29992]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:08:49.226926 #30038]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:09:42.198519 #30080]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:10:35.870827 #30108]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:14:15.384971 #30150]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:14:44.379357 #30177]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:15:41.439106 #30205]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:17:49.875868 #30267]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:18:55.129106 #30304]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:19:22.988255 #30331]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:20:34.051247 #30362]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:21:02.595149 #30394]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:21:46.272870 #30421]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:22:41.859754 #30467]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:23:08.627082 #30494]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:23:29.903483 #30520]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:23:50.905788 #30548]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:24:03.731143 #30572]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:24:31.461701 #30600]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:24:52.710085 #30627]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:25:19.846035 #30653]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:25:28.980385 #30679]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:25:37.688715 #30705]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:27:08.612495 #30736]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:27:23.524125 #30763]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:27:35.811004 #30788]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:28:06.992309 #30815]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:28:42.202386 #30843]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:29:06.238542 #30869]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:29:27.191321 #30896]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:29:41.508950 #30922]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:29:57.742455 #30948]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:30:18.658610 #30973]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:30:37.828759 #31000]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:31:54.284650 #31060]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:32:28.449452 #31089]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:34:08.923536 #31145]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:34:22.017008 #31171]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:34:33.796645 #31197]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:35:14.476845 #31229]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:36:28.524355 #31259]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:39:05.355965 #31319]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:39:21.131699 #31345]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:39:33.794914 #31370]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:40:53.684428 #31402]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:41:07.852163 #31428]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:41:28.472732 #31454]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:42:25.924208 #31505]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:43:06.827736 #31532]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:43:23.053556 #31559]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:43:30.869849 #31585]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:44:41.089795 #31616]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:44:52.352544 #31640]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:45:47.981674 #31669]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:46:24.770453 #31696]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:46:33.060640 #31722]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:46:40.115705 #31747]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:46:48.238029 #31773]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:47:12.881372 #31805]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:47:30.742266 #31831]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:47:54.213146 #31857]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:48:10.285381 #31883]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:48:32.263281 #31910]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:48:47.275221 #31935]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:49:16.315191 #31964]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:50:23.867619 #32000]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:50:43.646914 #32026]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:53:04.139075 #32102]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:53:27.739272 #32128]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:53:44.512433 #32155]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:54:05.491087 #32182]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:54:13.216042 #32207]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:54:21.198308 #32233]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:54:33.056586 #32259]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:56:27.505541 #32490]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:56:42.991882 #32516]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:56:55.987163 #32542]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T20:58:38.329053 #32591]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T21:02:50.016158 #32749]  INFO -- : Executing: SELECT appointments.id, appointments.name FROM appointments WHERE appointments.needAppointment = 'yes'
+I, [2014-02-04T21:03:58.022005 #32796]  INFO -- : Executing: SELECT appointments.id, appointments.name FROM appointments WHERE appointments.needAppointment = 'yes'
+I, [2014-02-04T21:07:35.222100 #33065]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-04T21:08:40.056649 #33094]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T21:08:50.367134 #33120]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T21:08:54.202539 #33137]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-04T21:12:17.587037 #33201]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-04T21:12:28.947669 #33232]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-04T21:12:47.810917 #33258]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-04T21:13:04.484482 #33285]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-04T21:13:14.133463 #33310]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-04T21:13:23.640184 #33336]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-04T21:13:35.164915 #33361]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-04T21:13:40.075045 #33386]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-04T21:13:50.915335 #33413]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-04T21:13:59.642953 #33439]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-04T21:17:02.118072 #33700]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'
+I, [2014-02-04T21:17:39.036865 #33736]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'
+I, [2014-02-04T21:18:04.788025 #33762]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'
+I, [2014-02-04T21:18:11.302395 #33788]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'
+I, [2014-02-04T21:22:26.182312 #33994]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'yes'
+I, [2014-02-04T21:22:44.219799 #34021]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'yes'
+I, [2014-02-04T21:22:57.606356 #34047]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'yes'
+I, [2014-02-04T21:23:42.724303 #34066]  INFO -- : Executing: select * from clients where id = 16
+I, [2014-02-04T21:23:42.724945 #34066]  INFO -- : Executing: select * from clients where id = 16
+I, [2014-02-04T21:23:42.725194 #34066]  INFO -- : Executing: select * from clients where id = 16
+I, [2014-02-04T21:23:42.725428 #34066]  INFO -- : Executing: update clients set name = 'Fredrick Sim', appointment = '02/09/2014', task = 'Lunch and Dinner Meeting' where id = 16
+I, [2014-02-04T21:23:42.772613 #34066]  INFO -- : Executing: update appointments set name = 'Fredrick Sim', appointment = '02/09/2014', task = 'Lunch and Dinner Meeting', needAppointment = '' where id = 16
+I, [2014-02-04T21:23:42.787935 #34066]  INFO -- : Executing: update tasks set name = 'Fredrick Sim', appointment = '02/09/2014', task = 'Lunch and Dinner Meeting', taskCompleted = '' where id = 16
+I, [2014-02-04T21:23:48.082394 #34085]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'yes'
+I, [2014-02-04T21:24:42.580674 #34105]  INFO -- : Executing: select * from clients where id = 16
+I, [2014-02-04T21:24:42.581143 #34105]  INFO -- : Executing: select * from clients where id = 16
+I, [2014-02-04T21:24:42.581310 #34105]  INFO -- : Executing: select * from clients where id = 16
+I, [2014-02-04T21:24:42.581479 #34105]  INFO -- : Executing: update clients set name = 'Fredrick Sim', appointment = '02/22/2014', task = 'Read over Docs' where id = 16
+I, [2014-02-04T21:24:42.590797 #34105]  INFO -- : Executing: update appointments set name = 'Fredrick Sim', appointment = '02/22/2014', task = 'Read over Docs', needAppointment = '' where id = 16
+I, [2014-02-04T21:24:42.601560 #34105]  INFO -- : Executing: update tasks set name = 'Fredrick Sim', appointment = '02/22/2014', task = 'Read over Docs', taskCompleted = 'yes' where id = 16
+I, [2014-02-04T21:24:45.970613 #34123]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'yes'
+I, [2014-02-04T21:25:55.399074 #34253]  INFO -- : Executing: SELECT * FROM clients
+I, [2014-02-04T21:26:19.385113 #34272]  INFO -- : Executing: SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = 'Danielle Coleman' ORDER by name ASC
+I, [2014-02-04T21:26:40.390213 #34290]  INFO -- : Executing: SELECT appointments.id, appointments.name FROM appointments WHERE appointments.needAppointment = 'yes'
+I, [2014-02-04T21:26:59.150596 #34308]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'
+I, [2014-02-04T21:27:14.932407 #34331]  INFO -- : Executing: SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'yes'
+I, [2014-02-04T21:27:42.544201 #34350]  INFO -- : Executing: select clients.* from clients where name LIKE '%Danielle Coleman %' order by name ASC
+I, [2014-02-04T21:27:54.482738 #34368]  INFO -- : Executing: select clients.* from clients where name LIKE '%%' order by name ASC
+I, [2014-02-04T21:28:12.017545 #34385]  INFO -- : Executing: select clients.* from clients where name LIKE '%Danielle%' order by name ASC
