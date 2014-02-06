@@ -1,5 +1,4 @@
 require_relative 'helper'
-require_relative '../models/client'
 
 class TestClient < ClientTest
   def test_to_s_prints_details
