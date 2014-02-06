@@ -20,9 +20,9 @@ class Client
   def save
     database = Environment.database_connection
     if id
-      database.execute("update clients set name = '#{name}', appointment = '#{appointment}', task = '#{task}' where id = #{id}")
+      database.execute("update clients set name = '#{name}', appointment = '#{appointment}', tasks = '#{task}' where id = #{id}")
     else
-      database.execute("insert into clients(name, appointment, task) values('#{name}', '#{appointment}', '#{task}')")
+      database.execute("insert into clients(name, appointment, tasks) values('#{name}', '#{appointment}', '#{task}')")
 
       @id = database.last_insert_row_id
     end
@@ -34,7 +34,7 @@ class Client
     database.results_as_hash = true
     results = database.execute("select * from clients where id = #{id}")[0]
     if results
-      client = Client.new(name: results["name"], appointment: results["appointment"], task: results["task"])
+      client = Client.new(name: results["name"], appointment: results["appointment"], task: results["tasks"])
       client.send("id=", results["id"])
       client
     else
@@ -47,7 +47,7 @@ class Client
     database.results_as_hash = true
     results = database.execute("select clients.* from clients where name LIKE '%#{search_term}%' order by name ASC")
     results.map do |row_hash|
-      client = Client.new(name: row_hash["name"], appointment: row_hash["appointment"], task: row_hash["task"])
+      client = Client.new(name: row_hash["name"], appointment: row_hash["appointment"], task: row_hash["tasks"])
       client.send("id=", row_hash["id"])
       client
     end

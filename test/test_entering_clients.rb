@@ -10,7 +10,7 @@ class TestEnteringClients < ClientTest
   def test_valid_client_gets_saved
     `./clienttracker add 'Sam Adams' --appointment 01/20/2014 --task 'Sign Docs' --environment test`
     database.results_as_hash = false
-    results = database.execute("select name, appointment, task from clients")
+    results = database.execute("select name, appointment, tasks from clients")
     expected = ["Sam Adams", "01/20/2014", "Sign Docs"]
     assert_equal expected, results[0]
 

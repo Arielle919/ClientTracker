@@ -140,7 +140,7 @@ class ClientTracker
     task_id = options[:id]
     @database.results_as_hash = false
     puts "Incomplete Task:"
-    uncomTask = @database.execute("SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'no'")
+    uncomTask = @database.execute("SELECT tasks.id, tasks.name, tasks.appointment, tasks.tasks FROM tasks WHERE tasks.taskCompleted = 'no'")
     columns = ["ID", "NAME", "APPOINTMENT", "TASK"]
     columns.each_slice(4) { |line|
       puts line.join(" ".center(10))
@@ -154,7 +154,7 @@ class ClientTracker
     task_id = options[:id]
     @database.results_as_hash = false
     puts "Task Complete:"
-    comTask = @database.execute("SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE tasks.taskCompleted = 'yes'")
+    comTask = @database.execute("SELECT tasks.id, tasks.name, tasks.appointment, tasks.tasks FROM tasks WHERE tasks.taskCompleted = 'yes'")
     columns = ["ID", "NAME", "APPOINTMENT", "TASK"]
     columns.each_slice(4) { |line|
       puts line.join(" ".center(9))
@@ -169,7 +169,7 @@ class ClientTracker
     task_name = options[:name]
     @database.results_as_hash = false
     puts "All Tasks for #{task_name}:"
-    results_tasks = @database.execute("SELECT tasks.id, tasks.name, tasks.appointment, tasks.task FROM tasks WHERE name = '#{task_name}' ORDER by name ASC")
+    results_tasks = @database.execute("SELECT tasks.id, tasks.name, tasks.appointment, tasks.tasks FROM tasks WHERE name = '#{task_name}' ORDER by name ASC")
     columns = ["ID", "NAME", "APPOINTMENT", "TASK"]
     columns.each_slice(4) { |line|
       puts line.join(" ".center(10))

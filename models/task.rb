@@ -20,9 +20,9 @@ class Task
   def save
     database = Environment.database_connection
     if id
-      database.execute("update tasks set name = '#{name}', appointment = '#{appointment}', task = '#{task}', taskCompleted = '#{taskCompleted}' where id = #{id}")
+      database.execute("update tasks set name = '#{name}', appointment = '#{appointment}', tasks = '#{task}', taskCompleted = '#{taskCompleted}' where id = #{id}")
     else
-      database.execute("insert into tasks(name, appointment, task, taskCompleted) values('#{name}', '#{appointment}', '#{task}', '#{taskCompleted}')")
+      database.execute("insert into tasks(name, appointment, tasks, taskCompleted) values('#{name}', '#{appointment}', '#{task}', '#{taskCompleted}')")
 
       @id = database.last_insert_row_id
     end

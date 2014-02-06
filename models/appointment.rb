@@ -20,9 +20,9 @@ class Appointment
   def save
     database = Environment.database_connection
     if id
-      database.execute("update appointments set name = '#{name}', appointment = '#{appointment}', task = '#{task}', needAppointment = '#{needAppointment}' where id = #{id}")
+      database.execute("update appointments set name = '#{name}', appointment = '#{appointment}', tasks = '#{task}', needAppointment = '#{needAppointment}' where id = #{id}")
     else
-      database.execute("insert into appointments(name, appointment, task, needAppointment) values('#{name}', '#{appointment}', '#{task}', '#{needAppointment}')")
+      database.execute("insert into appointments(name, appointment, tasks, needAppointment) values('#{name}', '#{appointment}', '#{task}', '#{needAppointment}')")
 
       @id = database.last_insert_row_id
     end
