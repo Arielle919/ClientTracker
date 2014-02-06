@@ -4,7 +4,6 @@ ClientTracker
 How to Install and Use
 ----------------------
 Download the program, cd into ClientTracker folder
-run "rake bootstrap_database"
 For Instructions type:
 ruby clienttracker start
 
