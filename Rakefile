@@ -3,7 +3,6 @@
 
 require_relative 'lib/environment'
 require 'active_record'
-require 'pry'
 
 require 'rake/testtask'
 Rake::TestTask.new(test: "db:test:prepare") do |t|

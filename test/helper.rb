@@ -1,7 +1,5 @@
 require 'minitest/autorun'
 require_relative '../lib/environment'
-require 'pry'
-require 'pry-nav'
 
 class ClientTest < MiniTest::Unit::TestCase
   def setup
