@@ -11,26 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140205123700) do
-
-  create_table "appointments", force: true do |t|
-    t.string "name"
-    t.string "appointment"
-    t.string "tasks"
-    t.string "needAppointment"
-  end
+ActiveRecord::Schema.define(version: 20140208084400) do
 
   create_table "clients", force: true do |t|
     t.string "name"
     t.string "appointment"
     t.string "tasks"
-  end
-
-  create_table "tasks", force: true do |t|
-    t.string "name"
-    t.string "appointment"
-    t.string "tasks"
-    t.string "taskCompleted"
+    t.string "need_appointment"
+    t.string "task_completed"
   end
 
 end

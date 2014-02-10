@@ -2,9 +2,9 @@ require_relative 'helper'
 
 class TestSearchingClients < ClientTest
   def test_search_returns_relevant_results
-    `./clienttracker add 'Sam Adams' --appointment 01/20/2014 --task 'Sign Docs' --environment test`
-    `./clienttracker add 'Sam Jenkins' --appointment 01/21/2014 --task 'Sign Papers' --environment test`
-    `./clienttracker add 'Tim Web' --appointment 01/22/2014 --task 'Sign Contract' --environment test`
+    Client.create(name: "Sam Adams", appointment: "01/20/2014", tasks: "Sign Docs", need_appointment: "no", task_completed: "yes")
+    Client.create(name: "Sam Jones", appointment: "01/27/2014", tasks: "Sign Paper", need_appointment: "no", task_completed: "yes")
+    Client.create(name: "Tim Collins", appointment: "01/25/2014", tasks: "Sign Contract", need_appointment: "no", task_completed: "yes")
 
     shell_output = ""
     IO.popen('./clienttracker search --environment test', 'r+') do |pipe|
@@ -12,7 +12,7 @@ class TestSearchingClients < ClientTest
       pipe.close_write
       shell_output = pipe.read
     end
-    assert_in_output shell_output, "Sam Adams", "Sam Jenkins"
-    assert_not_in_output shell_output, "Tim Web"
+    assert_in_output shell_output, "Sam Adams", "Sam Jones"
+    assert_not_in_output shell_output, "Tim Collins"
   end
 end

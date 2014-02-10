@@ -3,6 +3,7 @@
 
 require_relative 'lib/environment'
 require 'active_record'
+require 'pry'
 
 require 'rake/testtask'
 Rake::TestTask.new(test: "db:test:prepare") do |t|
@@ -11,13 +12,6 @@ end
 
 desc "Run tests"
 task :default => :test
-
-# desc 'import data from the given file' #shouldn't work b/c no import
-# task :import_data do
-#   Environment.environment = "production"
-#   require_relative 'lib/importer'
-#   Importer.import("data/client_import.csv")
-# end
 
 db_namespace = namespace :db do
   desc "Migrate the db"

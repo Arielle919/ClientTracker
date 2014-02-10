@@ -2,51 +2,47 @@ require_relative 'helper'
 
 class TestListingTasks < ClientTest
 
-def test_client_incomplete_task_list_returns_relevant_results
-    sammy_cole = Task.create(name: "Sammy Cole", appointment: "none", task: "Read Docs", taskCompleted: "no")
-    sam_jones = Task.create(name: "Sam Jones", appointment: "none", task: "Sign Paper", taskCompleted: "no")
-    tim_collins = Task.create(name: "Tim Collins", appointment: "none", task: "Sign Contract", taskCompleted: "no")
+  def test_client_incomplete_task_list_returns_relevant_results
+    sam_adams = Client.create(name: "Sam Adams", appointment: "01/20/2014", tasks: "Sign Docs", need_appointment: "no", task_completed: "no")
+    sam_jones = Client.create(name: "Sam Jones", appointment: "01/27/2014", tasks: "Sign Paper", need_appointment: "no", task_completed: "no")
+    tim_collins = Client.create(name: "Tim Collins", appointment: "01/25/2014", tasks: "Sign Contract", need_appointment: "no", task_completed: "no")
 
-    command = "./clienttracker 'task incomplete'"
-    expected = <<EOS.chomp
-Incomplete Task:
-ID          NAME          APPOINTMENT          TASK
-#{sammy_cole.id} --  Sammy Cole --  none --  Read Docs
-#{sam_jones.id} --  Sam Jones --  none --  Sign Paper
-#{tim_collins.id} --  Tim Collins --  none --  Sign Contract
-EOS
+    command_output = `./clienttracker 'task incomplete' --environment test`
+    assert_includes_in_order command_output,
+      "Incomplete Task:",
+      "ID        NAME        APPOINTMENT        TASK",
+      "#{sam_adams.id} -- Sam Adams -- 01/20/2014 -- Sign Docs -- no -- no",
+      "#{sam_jones.id} -- Sam Jones -- 01/27/2014 -- Sign Paper -- no -- no",
+      "#{tim_collins.id} -- Tim Collins -- 01/25/2014 -- Sign Contract -- no -- no"
   end
 
-def test_client_complete_task_list_returns_relevant_results
-    sammy_cole = Task.create(name: "Sammy Cole", appointment: "02/01/2014", task: "Read Docs", taskCompleted: "yes")
-    sam_jones = Task.create(name: "Sam Jones", appointment: "02/02/2014", task: "Sign Paper", taskCompleted: "yes")
-    tim_collins = Task.create(name: "Tim Collins", appointment: "02/03/2014", task: "Sign Contract", taskCompleted: "yes")
+  def test_client_complete_task_list_returns_relevant_results
+    sam_adams = Client.create(name: "Sam Adams", appointment: "01/20/2014", tasks: "Sign Docs", need_appointment: "no", task_completed: "yes")
+    sam_jones = Client.create(name: "Sam Jones", appointment: "01/27/2014", tasks: "Sign Paper", need_appointment: "no", task_completed: "yes")
+    tim_collins = Client.create(name: "Tim Collins", appointment: "01/25/2014", tasks: "Sign Contract", need_appointment: "no", task_completed: "yes")
 
-    command = "./clienttracker 'task complete'"
-    expected = <<EOS.chomp
-Task Complete:
-ID         NAME         APPOINTMENT         TASK
-#{sammy_cole.id} --  Sammy Cole --  02/01/2014 --  Read Docs
-#{sam_jones.id} --  Sam Jones --  02/02/2014 --  Sign Paper
-#{tim_collins.id} --  Tim Collins --  02/03/2014 --  Sign Contract
-EOS
-    assert_command_output expected, command
+    command_output = `./clienttracker 'task complete' --environment test`
+    assert_includes_in_order command_output,
+      "Complete Task:",
+      "ID        NAME        APPOINTMENT        TASK",
+      "#{sam_adams.id} -- Sam Adams -- 01/20/2014 -- Sign Docs -- no -- yes",
+      "#{sam_jones.id} -- Sam Jones -- 01/27/2014 -- Sign Paper -- no -- yes",
+      "#{tim_collins.id} -- Tim Collins -- 01/25/2014 -- Sign Contract -- no -- yes"
   end
 
   def test_client_task_list_returns_relevant_results
-    sammy_cole = Task.create(name: "Sammy Cole", appointment: "02/01/2014", task: "Read Docs", taskCompleted: "yes")
-    sam_jones = Task.create(name: "Sam Jones", appointment: "02/02/2014", task: "Sign Paper", taskCompleted: "yes")
-    tim_collins = Task.create(name: "Tim Collins", appointment: "02/03/2014", task: "Sign Contract", taskCompleted: "yes")
+    sam_adams = Client.create(name: "Sam Adams", appointment: "01/20/2014", tasks: "Sign Docs", need_appointment: "no", task_completed: "yes")
+    sam_jones = Client.create(name: "Sam Jones", appointment: "01/27/2014", tasks: "Sign Paper", need_appointment: "no", task_completed: "yes")
+    tim_collins = Client.create(name: "Tim Collins", appointment: "01/25/2014", tasks: "Sign Contract", need_appointment: "no", task_completed: "yes")
 
-    command = "./clienttracker 'client tasks' --name 'Sammy Cole'"
-    expected = <<EOS.chomp
-All Tasks for #{sammy_cole.name}:
-ID          NAME          APPOINTMENT          TASK
-#{sammy_cole.id} --  Sammy Cole --  02/01/2014 --  Read Docs
-EOS
-    assert_command_output expected, command
+    command_output = `./clienttracker 'client tasks' --name 'Sam Adams' --environment test`
+    assert_includes_in_order command_output,
+      "All Tasks for #{sam_adams.name}:",
+      "ID        NAME        APPOINTMENT        TASK",
+      "#{sam_adams.id} -- Sam Adams -- 01/20/2014 -- Sign Docs -- no -- yes"
   end
 
 end
+
 
 

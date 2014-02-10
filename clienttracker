@@ -11,10 +11,13 @@ class ClientTracker
   def initialize
     @options = ArgumentParser.parse
     Environment.environment = @options[:environment] || "production"
-    @database = Environment.database_connection
+    @options.delete(:environment)
   end
 
   def main
+    Environment.connect_to_database
+
+    command = options.delete(:command)
     if options[:command] == "start"
       show_directions()
     elsif options[:command] == "search"
@@ -44,8 +47,8 @@ class ClientTracker
     directions = ["WELCOME TO CLIENT TRACKER",
       "Client Tracker is a command application where you can create, edit, and save your clients.",
       "INSTRUCTIONS:",
-      "CREATE CLIENT: ruby clienttracker add 'client name' --appointment mm/dd/yyyy --task 'client task'",
-      "EDIT CLIENT: ruby clienttracker edit 'client name' --appointment mm/dd/yyyy --task 'client task'",
+      "CREATE CLIENT: ruby clienttracker add 'client name' --appointment mm/dd/yyyy --tasks 'client task' --need_appointment yes --task_completed no",
+      "EDIT CLIENT: ruby clienttracker edit 'client name' --appointment mm/dd/yyyy --tasks 'client task' --need_appointment yes --task_completed no",
       "DELETE CLIENT: ruby clienttracker delete --id 01",
       "LIST ALL CLIENTS ruby clienttracker 'list'",
       "SEARCH CLIENT: ruby clienttracker search",
@@ -61,30 +64,25 @@ class ClientTracker
 
   def search_clients()
     search_term = ask("What do you want to search for?")
-    puts "You asked for: #{search_term}"
-    puts Client.search(search_term)
+    search_clients_for(search_term)
   end
 
   def add_clients()
     error_messages = ArgumentParser.validate(options)
     if error_messages.empty?
       client = Client.new(options)
-      appointments = Appointment.new(options)
-      tasks = Task.new(options)
-      appointments.save
       client.save
-      tasks.save
-      puts "A client named #{client.name}, #{client.appointment}, #{client.task} was created."
+      puts "A client named #{client.name}, #{client.appointment}, #{client.task}, #{client.need_appointment}, #{client.completed_task} was created."
     else
-      puts error_messages
+      puts error_messages.join(" ")
     end
   end
 
   def list_clients()
     puts "All Clients:"
-    show_clients = @database.execute("SELECT * FROM clients")
+    show_clients = Client.all
     columns = ["ID", "NAME", "APPOINTMENT", "TASK"]
-    columns.each_slice(4) { |line|
+    columns.each_slice(6) { |line|
       puts line.join(" ".center(8))
     }
     show_clients.each_slice(1) { |line|
@@ -92,27 +90,36 @@ class ClientTracker
     }
   end
 
-
   def delete_rows()
-    if client = Client.find(options[:id])
-      delTasks = @database.execute("DELETE FROM tasks WHERE id = '#{client.id}'")
-      delApps = @database.execute("DELETE FROM appointments WHERE id = '#{client.id}'")
-      delClients = @database.execute("DELETE FROM clients WHERE id = '#{client.id}'")
-      delApps
-      delClients
-      delTasks
-        puts "client '#{client.id}' named: '#{client.name}' was deleted."
+    if client = Client.find_by(options[:id])
+      client.destroy
+      puts "client '#{client.id}' named: '#{client.name}' was deleted."
     else
       puts "Client Id doesn't exist!!!"
     end
   end
+#   user = User.find_by(name: 'David')
+# user.destroy
+
+  #   def delete_rows()
+  #   if client = Client.find(options[:id])
+  #     delTasks = @database.execute("DELETE FROM tasks WHERE id = '#{client.id}'")
+  #     delApps = @database.execute("DELETE FROM appointments WHERE id = '#{client.id}'")
+  #     delClients = @database.execute("DELETE FROM clients WHERE id = '#{client.id}'")
+  #     delApps
+  #     delClients
+  #     delTasks
+  #       puts "client '#{client.id}' named: '#{client.name}' was deleted."
+  #   else
+  #     puts "Client Id doesn't exist!!!"
+  #   end
+  # end
 
   def list_appointments()
-    appointment_id = options[:id]
     appointment_name = options[:name]
-    @database.results_as_hash = false
     puts "All Appointments for #{appointment_name}:"
-    results_appointments = @database.execute("SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = '#{appointment_name}' ORDER by name ASC")
+    results_appointments = Client.where(client.name = '#{appointment_name}')
+    # results_appointments = @database.execute("SELECT appointments.id, appointments.name, appointments.appointment FROM appointments WHERE name = '#{appointment_name}' ORDER by name ASC")
     columns = ["ID", "NAME", "APPOINTMENT"]
     columns.each_slice(3) { |line|
       puts line.join(" ".center(10))
@@ -123,24 +130,22 @@ class ClientTracker
   end
 
   def need_appointments()
-    appointment_id = options[:id]
-    @database.results_as_hash = false
     puts "Clients Need Appointments:"
     columns = ["ID", "NAME"]
     columns.each_slice(2) { |line|
       puts line.join(" ".center(5))
     }
-    needApp = @database.execute("SELECT appointments.id, appointments.name FROM appointments WHERE appointments.needAppointment = 'yes'")
+    needApp = Client.where(client.need_appointment = 'yes')
+    # needApp = @database.execute("SELECT appointments.id, appointments.name FROM appointments WHERE appointments.needAppointment = 'yes'")
     needApp.each_slice(1) { |needapps|
         puts needapps.join(" -- "+" ")
     }
   end
 
   def task_processing()
-    task_id = options[:id]
-    @database.results_as_hash = false
     puts "Incomplete Task:"
-    uncomTask = @database.execute("SELECT tasks.id, tasks.name, tasks.appointment, tasks.tasks FROM tasks WHERE tasks.taskCompleted = 'no'")
+    uncomTask = Client.where(client.completed_task = 'no')
+    # uncomTask = @database.execute("SELECT tasks.id, tasks.name, tasks.appointment, tasks.tasks FROM tasks WHERE tasks.taskCompleted = 'no'")
     columns = ["ID", "NAME", "APPOINTMENT", "TASK"]
     columns.each_slice(4) { |line|
       puts line.join(" ".center(10))
@@ -151,10 +156,9 @@ class ClientTracker
   end
 
   def task_complete()
-    task_id = options[:id]
-    @database.results_as_hash = false
     puts "Task Complete:"
-    comTask = @database.execute("SELECT tasks.id, tasks.name, tasks.appointment, tasks.tasks FROM tasks WHERE tasks.taskCompleted = 'yes'")
+    comTask = Client.where(client.completed_task = 'yes')
+    # comTask = @database.execute("SELECT tasks.id, tasks.name, tasks.appointment, tasks.tasks FROM tasks WHERE tasks.taskCompleted = 'yes'")
     columns = ["ID", "NAME", "APPOINTMENT", "TASK"]
     columns.each_slice(4) { |line|
       puts line.join(" ".center(9))
@@ -165,37 +169,27 @@ class ClientTracker
   end
 
   def list_task()
-    task_id = options[:id]
     task_name = options[:name]
-    @database.results_as_hash = false
     puts "All Tasks for #{task_name}:"
-    results_tasks = @database.execute("SELECT tasks.id, tasks.name, tasks.appointment, tasks.tasks FROM tasks WHERE name = '#{task_name}' ORDER by name ASC")
+    results_tasks = Client.where(client.name = '#{task_name}')
+    # results_tasks = @database.execute("SELECT tasks.id, tasks.name, tasks.appointment, tasks.tasks FROM tasks WHERE name = '#{task_name}' ORDER by name ASC")
     columns = ["ID", "NAME", "APPOINTMENT", "TASK"]
-    columns.each_slice(4) { |line|
-      puts line.join(" ".center(10))
-    }
-    results_tasks.each_slice(1) { |task|
-        puts task.join(" -- "+" ")
-    }
+    puts columns
+    puts results_tasks
+    # columns.each_slice(4) { |line|
+    #   puts line.join(" ".center(10))
+    # }
+    # results_tasks.each_slice(1) { |task|
+    #     puts task.join(" -- "+" ")
+    # }
   end
 
   def edit_client()
-    case options[:appointment]
-    when /January/, /February/, /March/, /April/, /May/, /June/, /July/
-        puts "Client can't be updated.  Date must be in this format: mm/dd/yyyy."
-    when /August/, /September/, /October/, /November/, /December/
-        puts "Client can't be updated.  Date must be in this format: mm/dd/yyyy."
+    if client = Client.find_by(id: options[:id])
+      client.update(options)
+      puts "Client #{client.id} is now named #{client.name}, #{client.appointment}, #{client.task}, #{client.need_appointment}, #{client.task_completed}"
     else
-      if client = Client.find(options[:id])
-        appointments = Appointment.find(options[:id])
-        tasks = Task.find(options[:id])
-        client.update(options)
-        appointments.update(options)
-        tasks.update(options)
-        puts "Client #{client.id} is now named #{client.name}, #{client.appointment}, #{client.task}."
-      else
-        puts "Client #{options[:id]} couldn't be found."
-      end
+      puts "Client #{options[:id]} couldn't be found."
     end
   end
 
@@ -203,4 +197,3 @@ end
 
 clienttracker = ClientTracker.new()
 clienttracker.main()
-

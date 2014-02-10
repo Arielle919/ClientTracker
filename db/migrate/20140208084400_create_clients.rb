@@ -4,6 +4,8 @@ class CreateClients < ActiveRecord::Migration
       t.string :name
       t.string :appointment
       t.string :tasks
+      t.string :need_appointment
+      t.string :task_completed
     end
   end
 end

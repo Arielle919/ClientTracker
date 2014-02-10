@@ -1,23 +1,30 @@
 require 'minitest/autorun'
 require_relative '../lib/environment'
+require 'pry'
+require 'pry-nav'
 
 class ClientTest < MiniTest::Unit::TestCase
   def setup
     Environment.environment = "test"
-  end
-
-  def database
-    Environment.database_connection
+    Environment.connect_to_database
   end
 
   def teardown
-    database.execute("delete from clients")
-    database.execute("delete from appointments")
-    database.execute("delete from tasks")
+    Client.destroy_all
+  end
+
+  def execute_popen command
+    shell_output = ""
+    IO.popen("#{command} --environment test", 'r+') do |pipe|
+      pipe.puts ""
+      shell_output = pipe.read
+    end
+    shell_output
   end
 
   def assert_command_output expected, command
-    actual = `#{command} --environment test`.strip
+    shell_output = execute_popen(command)
+    actual = shell_output.strip.split("\n").last
     assert_equal expected, actual
   end
 
@@ -35,5 +42,10 @@ class ClientTest < MiniTest::Unit::TestCase
     args.each do |argument|
       assert !output.include?(argument), "Output shouldn't include #{argument}: #{output}"
     end
+  end
+
+  def assert_includes_in_order(actual, *expected_items)
+    regexp_string = expected_items.join(".*").gsub("?","\\?").gsub("$", "\\$")
+    assert_match /#{regexp_string}/, actual.delete("\n"), "Expected /#{regexp_string}/ to match:\n\n" + actual
   end
 end
