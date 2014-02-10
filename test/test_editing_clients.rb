@@ -6,7 +6,7 @@ class TestEditingClients < ClientTest
     client.save
     id = client.id
     command = "./clienttracker edit --id #{id} --name 'Sam Adams' --appointment 01/20/2014 --task 'Sign Docs' --need_appointment no task_completed yes"
-    expected = "Client #{id} is now named Sam Adams, 01/20/2014, Sign Contract, no, yes"
+    expected = "Client #{id} is now named Sam Adams, 01/20/2014, Sign Docs, no, yes"
     assert_command_output expected, command
   end
 
@@ -21,7 +21,7 @@ class TestEditingClients < ClientTest
     client.save
     id = client.id
     command = "./clienttracker edit --id #{id} --name 'Sam Adams' --appointment 01/20/2014 --task 'Sign Docs' --need_appointment no task_completed yes"
-    expected = "Client #{id} is now named Sam Adams, 01/20/2014, Sign Papers, no, yes"
+    expected = "Client #{id} is now named Sam Adams, 01/20/2014, Sign Docs, no, yes"
     assert_command_output expected, command
   end
 
@@ -40,7 +40,7 @@ class TestEditingClients < ClientTest
     client.save
     id = client.id
     command = "./clienttracker edit --id #{id} --name 'Sammy Adams' --appointment 01/20/2014 --task 'Sign Docs' --need_appointment no task_completed yes"
-    expected = "Client #{id} is now named Sammy Adams, 01/20/2014, Sign Papers, no, yes"
+    expected = "Client #{id} is now named Sammy Adams, 01/20/2014, Sign Docs, no, yes"
     assert_command_output expected, command
   end
 end

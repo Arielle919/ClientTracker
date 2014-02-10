@@ -5,7 +5,6 @@ class TestDeletingClients < ClientTest
     client = Client.new(name: "Sam Adams", appointment: "01/20/2014", tasks: "Sign Docs", need_appointment: "no", task_completed: "yes")
     client.save
     id = client.id
-  binding.pry
     command = "./clienttracker delete --id #{id}"
     expected = "client '#{client.id}' named: '#{client.name}' was deleted."
     assert_command_output expected, command

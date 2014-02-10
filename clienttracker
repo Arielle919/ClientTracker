@@ -18,27 +18,29 @@ class ClientTracker
     Environment.connect_to_database
 
     command = options.delete(:command)
-    if options[:command] == "start"
+    if command == "search"
+      search_term = ask("What do you want to search for?")
+    elsif command == "start"
       show_directions()
-    elsif options[:command] == "search"
+    elsif command == "search"
       search_clients()
-    elsif options[:command] == "add"
+    elsif command == "add"
       add_clients()
-    elsif options[:command] == "list"
+    elsif command == "list"
       list_clients()
-    elsif options[:command] == "delete"
+    elsif command == "delete"
       delete_rows()
-    elsif options[:command] == "client appointments"
+    elsif command == "client appointments"
       list_appointments()
-    elsif options[:command] == "need appointments"
+    elsif command == "need appointments"
       need_appointments()
-    elsif options[:command] == "task incomplete"
+    elsif command == "task incomplete"
       task_processing()
-    elsif options[:command] == "task complete"
+    elsif command == "task complete"
       task_complete()
-    elsif options[:command] == "client tasks"
+    elsif command == "client tasks"
       list_task()
-    elsif options[:command] == "edit"
+    elsif command == "edit"
       edit_client()
     end
   end
@@ -62,9 +64,9 @@ class ClientTracker
     }
   end
 
-  def search_clients()
-    search_term = ask("What do you want to search for?")
-    search_clients_for(search_term)
+  def search_clients_for(search_term)
+    puts "You asked for: #{search_term}"
+    puts Client.search(search_term)
   end
 
   def add_clients()
@@ -72,7 +74,7 @@ class ClientTracker
     if error_messages.empty?
       client = Client.new(options)
       client.save
-      puts "A client named #{client.name}, #{client.appointment}, #{client.task}, #{client.need_appointment}, #{client.completed_task} was created."
+      puts "A client named #{client.name}, #{client.appointment}, #{client.tasks}, #{client.need_appointment}, #{client.task_completed} was created."
     else
       puts error_messages.join(" ")
     end
@@ -124,9 +126,10 @@ class ClientTracker
     columns.each_slice(3) { |line|
       puts line.join(" ".center(10))
     }
-    results_appointments.each_slice(1) { |apps|
-        puts apps.join(" -- "+" ")
-    }
+    puts results_appointments
+    # results_appointments.each_slice(1) { |apps|
+    #     puts apps.join(" -- "+" ")
+    # }
   end
 
   def need_appointments()
@@ -187,7 +190,7 @@ class ClientTracker
   def edit_client()
     if client = Client.find_by(id: options[:id])
       client.update(options)
-      puts "Client #{client.id} is now named #{client.name}, #{client.appointment}, #{client.task}, #{client.need_appointment}, #{client.task_completed}"
+      puts "Client #{client.id} is now named #{client.name}, #{client.appointment}, #{client.tasks}, #{client.need_appointment}, #{client.task_completed}"
     else
       puts "Client #{options[:id]} couldn't be found."
     end
